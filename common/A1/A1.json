@@ -1,0 +1,449 @@
+{
+  "maxTime": 900000,
+  "no": 150,
+  "minScore": 16,
+  "questions": [
+    {
+      "id": "A1001",
+      "question": "Khái niệm đường bộ được hiểu thế nào là đúng?",
+      "title": "Đường bộ gồm:",
+      "responses": [
+        {
+          "text": "Đường, cầu đường bộ.",
+          "checked": false
+        },
+        {
+          "text": "Hầm đường bộ, bến phà đường bộ.",
+          "checked": false
+        },
+        {
+          "text": "Đường, cầu đường bộ, hầm đường bộ, bến phà đường bộ và các công trình phụ trợ khác.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1001",
+      "question": "Khái niệm đường bộ được hiểu thế nào là đúng?",
+      "title": "Đường bộ gồm:",
+      "responses": [
+        {
+          "text": "Đường, cầu đường bộ.",
+          "checked": false
+        },
+        {
+          "text": "Hầm đường bộ, bến phà đường bộ.",
+          "checked": false
+        },
+        {
+          "text": "Đường, cầu đường bộ, hầm đường bộ, bến phà đường bộ và các công trình phụ trợ khác.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    },
+    {
+      "id": "A1003",
+      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
+      "picture": "A1/picture/A1003.jpg",
+      "responses": [
+        {
+          "text": "Biển 1.",
+          "checked": false
+        },
+        {
+          "text": "Biển 2.",
+          "checked": false
+        },
+        {
+          "text": "Biển 3.",
+          "checked": false
+        }
+      ],
+      "answer": [
+        1
+      ]
+    }
+  ]
+}
