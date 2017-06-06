@@ -7,8 +7,11 @@ export default class QuestionContainer extends React.Component {
     }
 
     render() {
-        return(
-            <span>TESTING</span>
+        return (
+            <div>
+                <span className="question">{this.props.question}</span><br/><br/>
+                <span className="title">{this.props.questionTitle}</span>
+            </div>
         )
     }
 }
