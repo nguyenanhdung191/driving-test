@@ -1,449 +1,1280 @@
 {
-  "maxTime": 900000,
-  "no": 150,
-  "minScore": 16,
+  "maxTime": 1800000,
+  "no": 450,
+  "minScore": 26,
+  "noOfQuestion": 30,
   "questions": [
     {
       "id": "A1001",
-      "question": "Khái niệm đường bộ được hiểu thế nào là đúng?",
-      "title": "Đường bộ gồm:",
+      "question": "Khái niệm “đường phố” được hiểu như thế nào là đúng? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Đường, cầu đường bộ.",
+          "text": " Đường phố là đường đô thị, gồm lòng đường và hè phố. ",
           "checked": false
         },
         {
-          "text": "Hầm đường bộ, bến phà đường bộ.",
+          "text": " Đường phố là đường bộ ngoài đô thị có lòng đường đủ rộng cho các phương tiện giao thông qua lại. ",
           "checked": false
         },
         {
-          "text": "Đường, cầu đường bộ, hầm đường bộ, bến phà đường bộ và các công trình phụ trợ khác.",
+          "text": " Cả hai ý nêu trên.",
           "checked": false
         }
       ],
-      "answer": [
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1002",
+      "question": "Khái niệm “dải phân cách” được hiểu như thế nào là đúng? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Là bộ phận của đường để phân chia mặt đường thành hai chiều xe chạy riêng biệt hoặc để phân chia phần đường của xe cơ giới và xe thô sơ. ",
+          "checked": false
+        },
+        {
+          "text": " Là bộ phận của đường để xác định ranh giới của đất dành cho đường bộ theo chiều ngang của đường. ",
+          "checked": false
+        },
+        {
+          "text": " Là bộ phận của đường để ngăn cách không cho các loại xe vào những nơi không được phép.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1003",
+      "question": "Khái niệm “đường bộ” được hiểu như thế nào là đúng?",
+      "title": "Đường bộ gồm: ",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Đường, cầu đường bộ. ",
+          "checked": false
+        },
+        {
+          "text": " Hầm đường bộ, bến phà đường bộ. ",
+          "checked": false
+        },
+        {
+          "text": " Đường, cầu đường bộ, hầm đường bộ, bến phà đường bộ và các công trình phụ trợ khác.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
         0,
         1
-      ]
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1004",
+      "question": "Khái niệm “công trình đường bộ” được hiểu như thế nào là đúng?",
+      "title": "Công trình đường bộ gồm: ",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Đường bộ, nơi dừng xe, đỗ xe trên đường bộ, đèn tín hiệu, biển báo hiệu, vạch kẻ đường, cọc tiêu. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
+          "text": " Rào chắn, đảo giao thông, dải phân cách, cột cây số, tường, kè, hệ thống thoát nước, trạm kiểm tra trọng tải xe, trạm thu phí và các công trình, thiết bị phụ trợ kháC. ",
           "checked": false
         },
         {
-          "text": "Biển 3.",
+          "text": " Đường bộ, nơi dừng xe, đỗ xe trong khu vực nhà ga đường sắt, cảng hàng không.",
           "checked": false
         }
       ],
-      "answer": [
-        1
-      ]
-    },
-    {
-      "id": "A1001",
-      "question": "Khái niệm đường bộ được hiểu thế nào là đúng?",
-      "title": "Đường bộ gồm:",
-      "responses": [
-        {
-          "text": "Đường, cầu đường bộ.",
-          "checked": false
-        },
-        {
-          "text": "Hầm đường bộ, bến phà đường bộ.",
-          "checked": false
-        },
-        {
-          "text": "Đường, cầu đường bộ, hầm đường bộ, bến phà đường bộ và các công trình phụ trợ khác.",
-          "checked": false
-        }
-      ],
-      "answer": [
+      "correctAnswer": [
         0,
         1
-      ]
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1005",
+      "question": "“Vạch kẻ đường” duợc hiểu thế nào là đúng?",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Vạch kẻ đường là Vạch chỉ sự phân chia làn đường, Vị trí hoặc hướng đi, vị trí dừng lại.",
           "checked": false
         },
         {
-          "text": "Biển 2.",
+          "text": " Vạch kẻ đường là vạch chỉ sự phân biệt vị trí dừng, đỗ trên đường.",
           "checked": false
         },
         {
-          "text": "Biển 3.",
+          "text": " Tất cả các ý nêu trên.",
           "checked": false
         }
       ],
-      "answer": [
-        1
-      ]
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1006",
+      "question": "Dải phân cách trên đường bộ có những loại nào?",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Loại cố định. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
-          "checked": false
-        },
-        {
-          "text": "Biển 3.",
+          "text": " Loại di động.",
           "checked": false
         }
       ],
-      "answer": [
+      "correctAnswer": [
+        0,
         1
-      ]
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1007",
+      "question": "Khái niệm “phần đường xe chạy” được hiểu như thế nào là đúng? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Là phần của đường bộ được sử dụng cho các phương tiện giao thông qua lại. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
+          "text": " Là phần đường bộ được sử dụng cho các phương tiện giao thông qua lại, dải đất dọc hai bên đường để bảo đảm an toàn giao thông. ",
           "checked": false
         },
         {
-          "text": "Biển 3.",
+          "text": " Là phần đường bộ được sử dụng cho các phương tiện giao thông qua lại, các công trình, thiết bị phụ trợ khác và dải đất dọc hai bên đường để bảo đảm an toàn giao thông.",
           "checked": false
         }
       ],
-      "answer": [
-        1
-      ]
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1008",
+      "question": "Khái niệm “khổ giới hạn của đường bộ” được hiểu như thế nào là đúng? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Là khoảng trống có kích thước giới hạn về chiều cao, chiều rộng của đường, cầu, bến phà, hầm đường bộ để các xe kể cả hàng hóa xếp trên xe đi qua được an toàn. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
+          "text": " Là khoảng trống có kích thước giới hạn về chiều rộng của đường, cầu, bến phà, hầm trên đường bộ để các xe kể cả hàng hóa xếp trên xe đi qua được an toàn. ",
           "checked": false
         },
         {
-          "text": "Biển 3.",
+          "text": " Là khoảng trống có kích thước giới hạn về chiều cao của cầu, bến phà, hầm trên đường bộ để các xe đi qua được an toàn.",
           "checked": false
         }
       ],
-      "answer": [
-        1
-      ]
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1009",
+      "question": "Khái niệm “làn đường” được hiểu như thế nào là đúng? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Là một phần của đường được chia theo chiều ngang của đường, có bề rộng đủ cho xe đỗ an toàn. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
+          "text": " Là một phần của đường Xe chạy được chia theo chiều dọc của đường, có bề rộng đủ cho Xe chạy an toàn. ",
           "checked": false
         },
         {
-          "text": "Biển 3.",
+          "text": " Cả 02 ý trên.",
           "checked": false
         }
       ],
-      "answer": [
+      "correctAnswer": [
         1
-      ]
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1010",
+      "question": "Khái niệm “đường cao tốc\" được hiểu như thế nào là đúng? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Là đường dành cho xe cơ giới, có dải phân cách chia đường cho xe chạy hai chiều riêng biệt; không giao nhau. Cùng mức Với một hoặc các đường khác; được bố trí đầy đủ trang thiết bị phục vụ, bảo đảm giao thông liên tục, an toàn, rút ngắn thời gian hành trình và chỉ cho xe ra, vào ở những điểm nhất định. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
-          "checked": false
-        },
-        {
-          "text": "Biển 3.",
+          "text": " Là đường chỉ dành cho xe cơ giới chạy. Với tốc độ cao, có dải phân cách chia đường cho xe chạy hai chiều ngược nhau riêng biệt, không giao cắt cùng mức Với đường khác; bố trí đầy đủ trang thiết bị phục vụ bảo đảm giao thông, an toàn và rút ngắn thời gian hành trình.",
           "checked": false
         }
       ],
-      "answer": [
-        1
-      ]
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1011",
+      "question": "Khái niệm “đường chính” được hiểu như thế nào là đúng? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Đường chính là đường bảo đảm giao thông chủ yếu trong khu vực. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
+          "text": " Đường chính là đường quốc lộ được đặt tên, số hiệu do cơ quan có thẩm quyền phân loại và quyết định. ",
           "checked": false
         },
         {
-          "text": "Biển 3.",
+          "text": " Đường chính là đường trong đô thị hoặc đường tỉnh.",
           "checked": false
         }
       ],
-      "answer": [
-        1
-      ]
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1012",
+      "question": "Khái niệm “đường ưu tiên” được hiểu như thế nào là đúng? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Đường ưu tiên là đường mà trên đó phương tiện tham gia giao thông đường bộ phải nhường đường cho CáC phương tiện đến từ hướng khác khi qua nơi đường giao nhau, có thể được cắm biển báo hiệu đường ưu tiêm. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
+          "text": " Đường ưu tiên là đường mà trên đó phương tiện tham gia giao thông đường bộ được các phương tiện đến từ hướng khác դhuծոց đường khi qua nơi đường giao nhau, được cắm biển báo hiệu đường ưu tiên. ",
           "checked": false
         },
         {
-          "text": "Biển 3.",
+          "text": " Đường ưu tiên là đường chỉ dành cho một số loại phương tiện tham gia giao thông, được cắm biển báo hiệu đường ưu tiên.",
           "checked": false
         }
       ],
-      "answer": [
+      "correctAnswer": [
         1
-      ]
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1013",
+      "question": "“Phương tiện giao thông đường bộ” gồm những loại nào? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Phương tiện giao thông cơ giới đường bộ, phương tiện giao thông thô sơ đường bộ. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
+          "text": " Phương tiện giao thông thô sơ đường bộ; phương tiện giao thông cơ giới đường bộ và xe máy chuyên dùng. ",
           "checked": false
         },
         {
-          "text": "Biển 3.",
+          "text": " Cả hai ý nêu trên.",
           "checked": false
         }
       ],
-      "answer": [
-        1
-      ]
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1014",
+      "question": "Khái niệm “phương tiện giao thông cơ giới đường bộ” được hiểu thế nào là đúng? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Gồm xe ô tô, máy kéo, xe mô tô hai bánh; xe mô tô ba bánh, xe gắn máy; xe cơ giới dùng cho người khuyết tật và xe máy chuyên dùng. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
-          "checked": false
-        },
-        {
-          "text": "Biển 3.",
+          "text": " Gồm xe ô tô, máy kéo, rơmoóc hoặc sơ mi rơmoóc được kéo bởi Xe ô tô, máy kéo; Xe mô tô hai bánh, Xe mô tô ba bánh, xe gắn máy (kể cả xe máy điện) và Các loại xe tương tự.",
           "checked": false
         }
       ],
-      "answer": [
+      "correctAnswer": [
         1
-      ]
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1015",
+      "question": "“Phương tiện tham gia giao thông đường bộ” gồm những loại nào? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Phương tiện giao thông Cơ giới đường bộ. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
-          "checked": false
-        },
-        {
-          "text": "Biển 3.",
+          "text": " Phương tiện giao thông thô sơ đường bộ và xe máy chuyên dùng.",
           "checked": false
         }
       ],
-      "answer": [
-        1
-      ]
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1016",
+      "question": "“Người tham gia giao thông đường bộ” gồm những đối tượng nào? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Người điều khiển, người sử dụng phương tiện tham gia giao thông đường bộ. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
-          "checked": false
-        },
-        {
-          "text": "Biển 3.",
+          "text": " Người điều khiển, dẫn dắt súc vật, người đi bộ trên đường bộ.",
           "checked": false
         }
       ],
-      "answer": [
+      "correctAnswer": [
+        0,
         1
-      ]
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1017",
+      "question": "Khái niệm “phương tiện giao thông thô sơ đường bộ” được hiểu thế nào là đúng? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Gồm xe đạp (kể cả xe đạp máy), xe xích lô, xe lăn dùng cho người khuyết tật, Xe Súc vật kéo và các loại Xe tương tự. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
+          "text": " Gồm xe ô tô, máy kéo, xe mô tô hai bánh; xe mô tô ba bánh, xe gắn máy; xe cơ giới dùng cho người khuyết tật và xe máy chuyên dùng. ",
           "checked": false
         },
         {
-          "text": "Biển 3.",
+          "text": " Gồm xe ô tô, máy kéo, rơ moóc hoặc sơ mi rơ moóc được kéo bởi xe ô tô, máy kéo, xe mô tô hai bánh, xe mô tô ba bánh, xe gắn máy (kể cả xe máy điện) và Các loại xe tương tự.",
           "checked": false
         }
       ],
-      "answer": [
-        1
-      ]
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1018",
+      "question": "“Người điều khiển phương tiện tham gia giao thông” gồm những đối tượng nào? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Người điều khiển xe cơ giới, người điều khiển xe thô SO. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
-          "checked": false
-        },
-        {
-          "text": "Biển 3.",
+          "text": " Người điều khiển xe máy chuyên dùng tham gia giao thÔng đường bộ.",
           "checked": false
         }
       ],
-      "answer": [
+      "correctAnswer": [
+        0,
         1
-      ]
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1019",
+      "question": "Khái niệm “dừng xe” được hiểu như thế nào là đúng quy tắc giao thông? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Dừng xe là trạng thái đứng yên của phương tiện giao thông không giới hạn thời gian để cho người lên, xuống phương tiện đó, xếp dỡ hàng hóa hoặc thực hiện công việc khác. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
+          "text": " Dừng xe là trạng thái đứng yên tạm thời của phương tiện giao thông trong một khoảng thời gian cần thiết đủ để cho người lên, xuống phương tiện, xếp dỡ hàng hóa hoặc thực hiện công Việc khác. ",
           "checked": false
         },
         {
-          "text": "Biển 3.",
+          "text": " Cả hai ý nêu trên.",
           "checked": false
         }
       ],
-      "answer": [
+      "correctAnswer": [
         1
-      ]
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1020",
+      "question": "Các hành vi nào ghi ở dưới đây bị nghiêm cấm? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Phá hoại đường, cầu, hầm, bến phà đường bộ, phá hoại đèn tín hiệu, cọc tiêu, biển báo hiệu, gương cầu, dải phân cách. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
-          "checked": false
-        },
-        {
-          "text": "Biển 3.",
+          "text": " Phá hoại hệ thống thoát nước và các công trình, thiết bị khác thuộc kết cấu hạ tầng giao thông đường bộ.",
           "checked": false
         }
       ],
-      "answer": [
+      "correctAnswer": [
+        0,
         1
-      ]
+      ],
+      "answer": []
     },
     {
-      "id": "A1003",
-      "question": "Biển nào báo hiệu giao nhau với đường không ưu tiên?",
-      "picture": "A1/picture/A1003.jpg",
+      "id": "A1021",
+      "question": "Hành vi đưa xe cơ giới, xe máy chuyên dùng không bảo đảm tiêu chuẩn an toàn kỹ thuật và bảo vệ môi trường tham gia giao thông đường bộ có bị nghiêm cấm hay không? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
       "responses": [
         {
-          "text": "Biển 1.",
+          "text": " Không nghiêm cấm. ",
           "checked": false
         },
         {
-          "text": "Biển 2.",
+          "text": " Bị nghiêm cấm. ",
           "checked": false
         },
         {
-          "text": "Biển 3.",
+          "text": " Bị nghiêm cấm tuỳ theo các tuyến đường. ",
+          "checked": false
+        },
+        {
+          "text": " Bị nghiêm cấm tuỳ theo loại xe.",
           "checked": false
         }
       ],
-      "answer": [
+      "correctAnswer": [
         1
-      ]
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1022",
+      "question": "Khái niệm “người điều khiển giao thông” được hiểu như thế nào là đúng? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Là người điều khiển phương tiện tham gia giao thông. ",
+          "checked": false
+        },
+        {
+          "text": " Là người được giao nhiệm vụ hướng dẫn giao thông tại nơi thi công, nơi ùn tắc giao thông, ở bến phà, tại cầu đường bộ đi chung với đường sắt. ",
+          "checked": false
+        },
+        {
+          "text": " Là cảnh sát giao thông. ",
+          "checked": false
+        },
+        {
+          "text": " Tất cả các ý nêu trên.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        1,
+        2
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1023",
+      "question": "Những hành vi nào ghi ở dưới đây bị nghiêm cấm?",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Đua xe, cổ Vũ đua xe, tổ chức đua xe trái phép. ",
+          "checked": false
+        },
+        {
+          "text": " Lạng lách, đánh võng.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0,
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1024",
+      "question": "Người điều khiển phương tiện giao thông đường bộ mà trong cơ thể có chất ma tuý có bị nghiêm cấm hay không?",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Bị nghiêm cấm. ",
+          "checked": false
+        },
+        {
+          "text": " Không bị nghiêm cấm.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1025",
+      "question": "Khái niệm “đỗ xe” được hiểu như thế nào là đúng quy tắc giao thông? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Là trạng thái đứng yên của phương tiện giao thông Có giới hạn trong một khoảng thời gian cần thiết đủ để cho người lên, xuống phương tiện đó, xếp dỡ hàng hóa hoặc thực hiện công Việc khác. ",
+          "checked": false
+        },
+        {
+          "text": " Là trạng thái đứng yên của phương tiện giao thông không giới hạn thời gian. ",
+          "checked": false
+        },
+        {
+          "text": " Cả hai ý nêu trên.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1026",
+      "question": "Người điều khiển xe ô tô, máy kéo, xe máy chuyên dùng trên đường mà trong máu hoặc hơi thở có nồng độ cồn vượt quá bao nhiêu thì bị cấm? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Người điều khiển xe ô tô, máy kéo, xe máy chuyên dùng trên đường mà trong máu có nồng độ cồn vượt quá 50 miligam/100 mililít máu hoặc 0,25 miligam/ 1 lít khí thỞ. ",
+          "checked": false
+        },
+        {
+          "text": " Người điều khiển xe ô tô, máy kéo, xe máy chuyên dùng trên đường mà trong máu hoặc hơi thở có nồng độ cồn. ",
+          "checked": false
+        },
+        {
+          "text": " Người điều khiển xe ô tô, máy kéo, xe máy chuyên dùng trên đường mà trong máu có nồng độ cồn Vượt quá 80 miligam/100 mililít máu hoặc 40 miligam/ 1 lít khí thỞ.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1027",
+      "question": "Người điều khiển xe mô tô, xe gắn máy trên đường mà trong máu có nồng độ cồn vượt quá bao nhiêu thì bị cấm? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Nồng độ cồn vượt quá 50 miligam/100 mililít máu. ",
+          "checked": false
+        },
+        {
+          "text": " Nồng độ cồn vượt quá 40 miligam/100 mililít máu. ",
+          "checked": false
+        },
+        {
+          "text": " Nồng độ cồn vượt quá 30 miligam/100 mililít máu.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1028",
+      "question": "Người điều khiển xe mô tô, xe gắn máy trên đường mà trong khí thở có nồng độ côn vượt quá bao nhiêu thì bị cấm? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Nông độ cồn vượt quá 0,25 miligam/ 1 lít khí thở. ",
+          "checked": false
+        },
+        {
+          "text": " Nông độ Cồn Vượt quá 0,20 miligam/ 1 lít khí thở. ",
+          "checked": false
+        },
+        {
+          "text": " Nồng độ cồn vượt quá 0,15 miligam/ 1 lít khí thở.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1029",
+      "question": "Hành vi giao xe cơ giới, xe máy chuyên dùng cho người không đủ điều kiện để điều khiển xe tham gia giao thông có bị nghiêm cấm hay không? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Không bị nghiêm cấm. ",
+          "checked": false
+        },
+        {
+          "text": " Bị nghiêm cấm. ",
+          "checked": false
+        },
+        {
+          "text": " Nghiêm cấm tuỳ từng trường hợp.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1030",
+      "question": "Hành vi điều khiển xe cơ giới chạy quá tốc độ quy định,giành đường, vượt ẩu có bị nghiêm cấm hay không? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Bị nghiêm cấm. ",
+          "checked": false
+        },
+        {
+          "text": " Bị nghiêm cấm tuỳ từng trường hợp. ",
+          "checked": false
+        },
+        {
+          "text": " Không bị nghiêm cấm.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1031",
+      "question": "Những hành vi nào sau đây bị cấm? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Bấm còi, rú ga liên tục, bấm còi trong thời gian từ 22 giờ đến 5 giờ. ",
+          "checked": false
+        },
+        {
+          "text": " Bấm còi hơi, sử dụng đèn chiếu xa trong khu đô thị và khu dân cư, trừ các xe ưu tiên khi đang làm nhiệm vụ.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0,
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1032",
+      "question": "Các hành vi nào sau đây bị nghiêm cấm? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Lắp đặt, sử dụng còi, đèn không đúng thiết kế của nhà sản xuất đối với từng loại xe cơ giới. ",
+          "checked": false
+        },
+        {
+          "text": " Sử dụng thiết bị âm thanh gây mất trật tự an toàn giao thông, trật tự công cộng.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0,
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1033",
+      "question": "Trong hoạt động vận tải đường bộ, các hành vi nào sau đây bị nghiêm cấm? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Vận chuyển hàng cấm lưu thông. ",
+          "checked": false
+        },
+        {
+          "text": " Vận chuyển trái phép hoặc không thực hiện đầy đủ các quy định về vận chuyển hàng nguy hiểm, động vật hoang dã.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0,
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1034",
+      "question": "Trong hoạt động vận tải khách, những hành vi nào ghi ở dưới đây bị cấm? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Đe doạ, xúc phạm, tranh giành, lôi kéo hành khách; bắt ép hành khách sử dụng dịch Vụ ngoài ý muốn. ",
+          "checked": false
+        },
+        {
+          "text": " Chuyển tải, xuống khách hoặc các hành vi khác nhằm trốn tránh phát hiện xe chở quá tải, quá số người quy định.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0,
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1035",
+      "question": "Hành vi bỏ trốn sau khi gây tai nạn để trốn tránh trách nhiệm hoặc khi có điều kiện mà cố ý không cứu giúp người bị tai nạn giao thông có bị nghiêm cấm hay không? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Không bị nghiêm cấm. ",
+          "checked": false
+        },
+        {
+          "text": " Nghiêm cấm tuỳ từng trường hợp cụ thể. ",
+          "checked": false
+        },
+        {
+          "text": " Bị nghiêm cấm.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        2
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1036",
+      "question": "Khi xảy ra tai nạn giao thông, những hành vi nào ghi ở dưới đây bị nghiêm cấm? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Xâm phạm tính mạng, sức khoẻ, tài sản của người bị tai nạn giao thông, xâm phạm tính mạng, sức khoẻ, tài sản của người gây tai nạn giao thông. ",
+          "checked": false
+        },
+        {
+          "text": " Lợi dụng việc xảy ra tai nạn giao thông để hành hung, đe doạ, xúi giục, gây sức ép, làm mất trật tự, cản trở Việc xử lý tai nạn giao thông.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0,
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1037",
+      "question": "Những hành vi nào ghi ở dưới đây bị nghiêm cấm? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Sử dụng hè phố để đi bộ. ",
+          "checked": false
+        },
+        {
+          "text": " Sử dụng lòng đường, lề đường trái phép. ",
+          "checked": false
+        },
+        {
+          "text": " Sử dụng hè phố trái phép.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        1,
+        2
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1038",
+      "question": "Việc sản xuất, mua bán, sử dụng biển số xe cơ giới, xe máy chuyên dùng được quy định như thế nào trong Luật Giao thông đường bộ? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Nghiêm cấm sản xuất, được phép sử dụng. ",
+          "checked": false
+        },
+        {
+          "text": " Nghiêm cấm mua bán, cho phép sử dụng. ",
+          "checked": false
+        },
+        {
+          "text": " Nghiêm cấm sản xuất, mua bán, sử dụng trái phép.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        2
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1039",
+      "question": "Người lái xe không được vượt xe khác khi gặp trường hợp nào ghi ở dưới đây? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Trên cầu hẹp có một làn xe, nơi đường giao nhau, đường bộ giao nhau cùng mức với đường sắt. ",
+          "checked": false
+        },
+        {
+          "text": " Điều kiện thời tiết hoặc đường không bảo đảm an toàn cho việc Vượt; xe ưu tiên đang phát tín hiệu ưu tiên làm nhiệm vụ.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0,
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1040",
+      "question": "Ở những nơi nào không được quay đầu xe?",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Ở phần đường dành cho người đi bộ qua đường, đường hẹp, đường dốc, đoạn đường cong tầm nhìn bị che khuăt.",
+          "checked": false
+        },
+        {
+          "text": " Tại nơi đường bộ giao nhau. Cùng mức.",
+          "checked": false
+        },
+        {
+          "text": " Trên cầu, đầu cầu, gầm cầu Vượt, ngầm, trong hầm đường bộ, đường cao tốc, tại nơi đường bộ giao nhau cùng mức với đường sắt.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0,
+        2
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1041",
+      "question": "Ở những nơi nào không được lùi xe? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Ở khu vực cho phép đỗ xe. ",
+          "checked": false
+        },
+        {
+          "text": " Ở khu vực cấm dừng và trên phần đường dành cho người đi bộ qua đường. ",
+          "checked": false
+        },
+        {
+          "text": " Nơi đường bộ giao nhau, đường bộ giao nhau. Cùng mức Với đường sắt, nơi tầm nhìn bị che khuất, trong hầm đường bộ, đường cao tốc.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        1,
+        2
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1042",
+      "question": "Người điều khiển phương tiện giao thông trên đường phố có được dừng xe, đỗ xe trên đường xe điện, trên miệng cống thoát nước, miệng hầm của đường điện thoại, điện cao thế, chỗ dành riêng cho xe chữa cháy lấy nước hay không? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Được dừng xe, đỗ xe trong trường hợp cần thiết. ",
+          "checked": false
+        },
+        {
+          "text": " Không được dừng xe, đỗ xe. ",
+          "checked": false
+        },
+        {
+          "text": " Được dừng xe, đỗ xe. ",
+          "checked": false
+        },
+        {
+          "text": " Được dừng xe.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1043",
+      "question": "Khi điều khiển xe trên đường cao tốc, những việc nào không cho phép? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Cho xe chạy ở làn dừng xe khẩn cấp và phần lề đường, quay đầu xe, lùi xe, cho xe chạy quá tốc độ tối đa và dưới tốc độ tối thiểu ghi trên biển báo, sơn kẻ trên mặt đường. ",
+          "checked": false
+        },
+        {
+          "text": " Cho xe chạy quá tốc độ tối thiểu và dưới tốc độ tối đa ghi trên biển báo, sơn kẻ trên mặt đường. ",
+          "checked": false
+        },
+        {
+          "text": " Dừng xe, đỗ xe ở nơi quy định.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1044",
+      "question": "Khi xe kéo xe và xe kéo rơi moóc, những hành vi nào không được phép? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Xe kéo rơi moóC, Xe kéo Sơ mi rơi moóC kéo thêm rơ moóC hoặc Xe kháC. ",
+          "checked": false
+        },
+        {
+          "text": " Chở người trên xe được kéo, kéo theo xe thô sơ, xe găn máy, xe mô tô. ",
+          "checked": false
+        },
+        {
+          "text": " Chở hàng trên rơ moóc hoặc sơ mi rơ moóc.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0,
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1045",
+      "question": "Người ngồi trên xe mô tô hai bánh, ba bánh, xe gắn máy khi tham gia giao thông không được thực hiện những hành vi nào dưới đây? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Đội mũ bảo hiểm và cài quai đúng quy cách. ",
+          "checked": false
+        },
+        {
+          "text": " Sử dụng ô, bám, kéo hoặc đẩy các phương tiện khác. ",
+          "checked": false
+        },
+        {
+          "text": " Đứng trên yên, giá đèo hàng hoặc ngồi trên tay lái, các hành vi khác gây mất trật tự an toàn giao thông.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        1,
+        2
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1046",
+      "question": "Người ngồi trên xe mô tô hai bánh, xe mô tô ba bánh,xe gắn máy khi tham gia giao thông có được mang, vác vật cồng kềnh hay không? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Được mang, vác tuỳ trường hợp cụ thể. ",
+          "checked": false
+        },
+        {
+          "text": " Không được mang, VáC. ",
+          "checked": false
+        },
+        {
+          "text": " Được mang, vác nhưng phải đảm bảo an toàn.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1047",
+      "question": "Người điều khiển xe mô tô hai bánh, ba bánh, xe gắn máy có được phép sử dụng xe để kéo, đẩy các xe khác, vật khác khi tham gia giao thông không?",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Được phép.",
+          "checked": false
+        },
+        {
+          "text": " Tuỳ trường hợp.",
+          "checked": false
+        },
+        {
+          "text": " Không được phép.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        2
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1048",
+      "question": "Khi điều khiển xe mô tô hai bánh, xe mô tô ba bánh, xe gắn máy, những hành vi nào không được phép? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Buông cả hai tay hoặc đi xe bằng một bánh đối với xe hai bánh, bằng hai bánh đối với xe ba bánh, chạy quá tốc độ quy định. ",
+          "checked": false
+        },
+        {
+          "text": " Sử dụng xe để kéo, đẩy xe khác, vật khác và chở vật cồng kềnh, để chân chống quẹt xuống đất và các hành vi khác gây mất trật tự an toàn giao thông. ",
+          "checked": false
+        },
+        {
+          "text": " Chạy đúng tốc độ quy định và chấp hành đúng quy tắc giao thông đường bộ.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0,
+        1
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1049",
+      "question": "Việc họp chợ, tụ tập đông người trái phép, thả rông súc vật trên đường bộ có được phép hay không? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Không được phép. ",
+          "checked": false
+        },
+        {
+          "text": " Được phép. ",
+          "checked": false
+        },
+        {
+          "text": " Được phép trong một số trường hợp cụ thể.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        0
+      ],
+      "answer": []
+    },
+    {
+      "id": "A1050",
+      "question": "Bảo đảm trật tự, an toàn giao thông đường bộ là trách nhiệm của ai? ",
+      "title": "",
+      "correct": false,
+      "finish": false,
+      "selected": false,
+      "responses": [
+        {
+          "text": " Là trách nhiệm của ngành Giao thông vận tải và ngành Công an. ",
+          "checked": false
+        },
+        {
+          "text": " Là trách nhiệm Của Cơ quan, tổ chức, cá nhân. ",
+          "checked": false
+        },
+        {
+          "text": " Là trách nhiệm của cảnh sát giao thông.",
+          "checked": false
+        }
+      ],
+      "correctAnswer": [
+        1
+      ],
+      "answer": []
     }
   ]
 }

@@ -56,3 +56,16 @@ input[type=checkbox] {
     margin-bottom: 30px;
     font-size: 20px;
 }
+
+.selected-question {
+    box-shadow: 20px 20px;
+}
+
+.answer-status {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.response-container{
+    margin-bottom: 8px;
+}
