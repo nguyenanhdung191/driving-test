@@ -1,5 +1,5 @@
 import React from "react";
-import A1 from "../../common/A1/A1.json";
+import A1 from "../../common/A1.json";
 import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
 import Next from 'material-ui/svg-icons/av/fast-forward';
@@ -228,12 +228,11 @@ export default class QuestionContainer extends React.Component {
                 </div>
                 <div className="question-picture">
                     {
-                        this.state.questions[this.state.currentQuestion].hasOwnProperty("picture") ?
-                            (<img src={`./common/${this.state.questions[this.state.currentQuestion].picture}`}/>) : (
+                        (this.state.questions[this.state.currentQuestion].picture !== "") ?
+                            (<img src={`./common/picture/${this.state.questions[this.state.currentQuestion].picture}`}/>) : (
                             <br/>)
                     }
                 </div>
-                <div className="title">{this.state.questions[this.state.currentQuestion].title}</div>
                 < div className="responses">
                     {
                         this.state.questions[this.state.currentQuestion].responses.map((response, index) => {
