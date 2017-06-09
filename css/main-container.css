@@ -1,5 +1,5 @@
 .main-container {
-    width: 50%;
+    width: 40%;
     border: 1px solid black;
     display: inline-block;
     text-align: left;
@@ -23,7 +23,7 @@
 }
 
 .question-picture img {
-    width: 60%;
+    height: 60%;
 }
 
 .responses {

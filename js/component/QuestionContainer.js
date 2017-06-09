@@ -1,5 +1,6 @@
 import React from "react";
-import A1 from "../../common/A1.json";
+import questionList from "../../common/questions.json";
+import ruleList from "../../common/rules.json";
 import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
 import Next from 'material-ui/svg-icons/av/fast-forward';
@@ -11,13 +12,9 @@ import Incorrect from 'material-ui/svg-icons/navigation/close';
 export default class QuestionContainer extends React.Component {
     constructor() {
         super();
-        this.state = {
-            currentQuestion: 0,
-            questions: A1.questions,
-            complete: false
-        };
+        this.state = this.questionsGenerate("B2");
         this.state.questions[0].selected = true;
-        this.countDown(new Date().getTime() + A1.maxTime);
+        this.countDown(new Date().getTime() + this.state.maxTime);
     };
 
     handleNextQuestion = () => {
@@ -97,12 +94,38 @@ export default class QuestionContainer extends React.Component {
         });
         object.complete = true;
         window.clearInterval(window.intervalId);
-        if (correct >= A1.minScore) {
-            $("#timer").html(`Chúc mừng, bạn đã thi đậu!!<br/>Số câu đúng: <strong>${correct} / ${A1.noOfQuestion}</strong>`);
+        if (correct >= this.state.minScore) {
+            $("#timer").html(`Chúc mừng, bạn đã thi đậu!!<br/>Số câu đúng: <strong>${correct} / ${this.state.noOfQuestion}</strong>`);
         } else {
-            $("#timer").html(`Rất tiếc, bạn đã thi rớt!!<br/>Số câu đúng: <strong>${correct} / ${A1.noOfQuestion}</strong>`);
+            $("#timer").html(`Rất tiếc, bạn đã thi rớt!!<br/>Số câu đúng: <strong>${correct} / ${this.state.noOfQuestion}</strong>`);
         }
         this.setState(object);
+    };
+
+    questionsGenerate = (grade) => {
+        let rule = ruleList[grade];
+        let maxTime = rule.maxTime;
+        let totalQuestion = rule.totalQuestion;
+        let minScore = rule.minScore;
+        let noOfQuestion = rule.noOfQuestion;
+        let questions = [];
+        Object.keys(rule.questionList).forEach(key => {
+            for (let i = 1; i <= rule.questionList[key].no; i++) {
+                let length = rule.questionList[key].questions.length;
+                let randomIndex = Math.floor(Math.random() * length);
+                questions.push(questionList[rule.questionList[key].questions[randomIndex]]);
+                rule.questionList[key].questions.splice(randomIndex, 1);
+            }
+        });
+        return {
+            currentQuestion: 0,
+            maxTime: maxTime,
+            totalQuestion: totalQuestion,
+            minScore: minScore,
+            noOfQuestion: noOfQuestion,
+            questions: questions,
+            complete: false
+        };
     };
 
     countDown = (endTime) => {
@@ -180,7 +203,7 @@ export default class QuestionContainer extends React.Component {
                         onClick={this.handleNextQuestion}
                     />
                     <RaisedButton
-                        label="Nộp bài"
+                        label="Kết thúc"
                         style={{marginLeft: 20}}
                         backgroundColor="#fffb2d"
                         onClick={this.handleComplete}
@@ -208,7 +231,7 @@ export default class QuestionContainer extends React.Component {
                                                     return answer + 1
                                                 }).toString()
                                             }
-                                        </span>
+             </span>
                                     }
                                 </div>
                                 <div>
@@ -219,7 +242,7 @@ export default class QuestionContainer extends React.Component {
                                                     return answer + 1
                                                 }).toString()
                                             }
-                                        </span>
+             </span>
                                     }
                                 </div>
                             </div>
@@ -229,7 +252,8 @@ export default class QuestionContainer extends React.Component {
                 <div className="question-picture">
                     {
                         (this.state.questions[this.state.currentQuestion].picture !== "") ?
-                            (<img src={`./common/picture/${this.state.questions[this.state.currentQuestion].picture}`}/>) : (
+                            (<img
+                                src={`./common/picture/${this.state.questions[this.state.currentQuestion].picture}`}/>) : (
                             <br/>)
                     }
                 </div>
@@ -244,7 +268,7 @@ export default class QuestionContainer extends React.Component {
                                         onCheck={this.handleCheckResponse}
                                         id={`${this.state.currentQuestion}-${index}`}
                                         disabled={this.state.complete}
-                                        labelStyle={{color: "#000000"}}
+                                        labelStyle={(this.state.questions[this.state.currentQuestion].responses[index].checked) ? {color: "blue"} : {color: "#000000"} }
                                     />
                                 </div>
                             )
