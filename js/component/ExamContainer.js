@@ -5,9 +5,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
 import Next from 'material-ui/svg-icons/av/fast-forward';
 import Previous from 'material-ui/svg-icons/av/fast-rewind';
-import Correct from 'material-ui/svg-icons/navigation/check';
-import Incorrect from 'material-ui/svg-icons/navigation/close';
-
 
 export default class QuestionContainer extends React.Component {
     constructor() {
@@ -15,6 +12,14 @@ export default class QuestionContainer extends React.Component {
         this.state = this.questionsGenerate("B2");
         this.state.questions[0].selected = true;
         this.countDown(new Date().getTime() + this.state.maxTime);
+        let current = this;
+        $(document).on('keydown', function (event) {
+            if (event.keyCode === 37) {
+                current.handlePreviousQuestion();
+            } else if (event.keyCode === 39) {
+                current.handleNextQuestion();
+            }
+        });
     };
 
     handleNextQuestion = () => {
@@ -60,6 +65,7 @@ export default class QuestionContainer extends React.Component {
     };
 
     handleSelectQuestion = (event) => {
+        console.log(event.target.innerHTML);
         let object = this.state;
         let finish = false;
         object.questions[this.state.currentQuestion].responses.forEach(response => {
@@ -69,8 +75,8 @@ export default class QuestionContainer extends React.Component {
         });
         object.questions[this.state.currentQuestion].finish = finish;
         object.questions[this.state.currentQuestion].selected = false;
-        object.questions[parseInt(event.currentTarget.value)].selected = true;
-        object.currentQuestion = parseInt(event.currentTarget.value);
+        object.questions[parseInt(event.target.innerHTML) - 1].selected = true;
+        object.currentQuestion = parseInt(event.target.innerHTML - 1);
         this.setState(object);
     };
 
@@ -95,9 +101,9 @@ export default class QuestionContainer extends React.Component {
         object.complete = true;
         window.clearInterval(window.intervalId);
         if (correct >= this.state.minScore) {
-            $("#timer").html(`Chúc mừng, bạn đã thi đậu!!<br/>Số câu đúng: <strong>${correct} / ${this.state.noOfQuestion}</strong>`);
+            $("#timer").html(`Chúc mừng, bạn đã thi đậu!!<br/>Thời gian làm bài: <strong>${this.state.time}</strong><br/>Số câu đúng: <strong>${correct} / ${this.state.noOfQuestion}</strong>`);
         } else {
-            $("#timer").html(`Rất tiếc, bạn đã thi rớt!!<br/>Số câu đúng: <strong>${correct} / ${this.state.noOfQuestion}</strong>`);
+            $("#timer").html(`Rất tiếc, bạn đã thi rớt!!<br/>Thời gian làm bài: <strong>${this.state.time}</strong><br/>Số câu đúng: <strong>${correct} / ${this.state.noOfQuestion}</strong>`);
         }
         this.setState(object);
     };
@@ -118,6 +124,7 @@ export default class QuestionContainer extends React.Component {
             }
         });
         return {
+            grade: grade,
             currentQuestion: 0,
             maxTime: maxTime,
             totalQuestion: totalQuestion,
@@ -134,6 +141,9 @@ export default class QuestionContainer extends React.Component {
             let minute = Math.floor((endTime - now) / 60000);
             let second = parseInt((((endTime - now) % 60000) / 1000).toFixed(0));
             $("#timer").html(`Thời gian còn lại: <strong>${(minute < 10) ? "0" + minute : minute} : ${(second < 10) ? "0" + second : second}</strong>`);
+            this.setState({
+                time: `${29 - minute} phút, ${60 - second} giây`
+            });
             if (minute <= 0 && second <= 0) {
                 alert("Hết thời gian");
                 this.handleComplete();
@@ -147,40 +157,27 @@ export default class QuestionContainer extends React.Component {
                 <div className="question-selector">
                     {
                         this.state.questions.map((question, index) => {
-                            let backgroundColor = "";
-                            if (this.state.complete !== true) {
-                                if (question.finish === true) {
-                                    backgroundColor = "#00d80e";
-                                }
-                                else {
-                                    backgroundColor = "#e5e5e5";
-                                }
-                            } else {
-                                if (question.correct === true) {
-                                    backgroundColor = "#00d80e";
+                                let state = "";
+                                if (this.state.complete !== true) {
+                                    if (question.selected === true) {
+                                        state = " selected";
+                                    } else if (question.finish === true) {
+                                        state = " finish";
+                                    }
                                 } else {
-                                    backgroundColor = "#ff9696";
+                                    if (question.correct === true) {
+                                        state = " correct";
+                                    } else {
+                                        state = " incorrect";
+                                    }
                                 }
+
+                                return <a key={index + 1}
+                                          href="#"
+                                          className={`question-button${state}`}
+                                          onClick={this.handleSelectQuestion}>{index + 1}</a>
                             }
-                            return (<RaisedButton
-                                    key={index}
-                                    backgroundColor={backgroundColor}
-                                    label={index + 1}
-                                    labelStyle={{
-                                        fontWeight: "bold",
-                                        fontSize: 20,
-                                        textDecoration: (question.selected === true) ? "underline" : null
-                                    }}
-                                    style={{margin: 5, borderWidth: 20}}
-                                    value={index}
-                                    onClick={this.handleSelectQuestion}
-                                    labelPosition="before"
-                                    icon={(this.state.complete === true) ? ((question.correct === true) ? <Correct/> :
-                                        <Incorrect/>) : null}/>
-
-
-                            )
-                        })
+                        )
                     }
                 </div>
                 <div className="question-button-container">
