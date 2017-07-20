@@ -5,13 +5,16 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Checkbox from 'material-ui/Checkbox';
 import Next from 'material-ui/svg-icons/av/fast-forward';
 import Previous from 'material-ui/svg-icons/av/fast-rewind';
+import Paper from 'material-ui/Paper';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
 
-export default class QuestionContainer extends React.Component {
-    constructor() {
-        super();
-        this.state = this.questionsGenerate("B2");
+
+export default class ExamContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = this.questionsGenerate(this.props.grade);
         this.state.questions[0].selected = true;
-        this.countDown(new Date().getTime() + this.state.maxTime);
         let current = this;
         $(document).on('keydown', function (event) {
             if (event.keyCode === 37) {
@@ -65,7 +68,6 @@ export default class QuestionContainer extends React.Component {
     };
 
     handleSelectQuestion = (event) => {
-        console.log(event.target.innerHTML);
         let object = this.state;
         let finish = false;
         object.questions[this.state.currentQuestion].responses.forEach(response => {
@@ -100,10 +102,16 @@ export default class QuestionContainer extends React.Component {
         });
         object.complete = true;
         window.clearInterval(window.intervalId);
-        if (correct >= this.state.minScore) {
-            $("#timer").html(`Chúc mừng, bạn đã thi đậu!!<br/>Thời gian làm bài: <strong>${this.state.time}</strong><br/>Số câu đúng: <strong>${correct} / ${this.state.noOfQuestion}</strong>`);
+        let time;
+        if (object.time <= 60) {
+            time = object.time + " giây";
         } else {
-            $("#timer").html(`Rất tiếc, bạn đã thi rớt!!<br/>Thời gian làm bài: <strong>${this.state.time}</strong><br/>Số câu đúng: <strong>${correct} / ${this.state.noOfQuestion}</strong>`);
+            time = `${Math.floor(object.time / 60)} phút, ${object.time % 60} giây`;
+        }
+        if (correct >= this.state.minScore) {
+            $("#timer").html(`Chúc mừng, bạn đã thi đậu!!<br/>Thời gian làm bài: <strong>${time}</strong><br/>Số câu đúng: <strong>${correct} / ${this.state.noOfQuestion}</strong>`);
+        } else {
+            $("#timer").html(`Rất tiếc, bạn đã thi rớt!!<br/>Thời gian làm bài: <strong>${time}</strong><br/>Số câu đúng: <strong>${correct} / ${this.state.noOfQuestion}</strong>`);
         }
         this.setState(object);
     };
@@ -124,6 +132,7 @@ export default class QuestionContainer extends React.Component {
             }
         });
         return {
+            dialog: true,
             grade: grade,
             currentQuestion: 0,
             maxTime: maxTime,
@@ -131,7 +140,8 @@ export default class QuestionContainer extends React.Component {
             minScore: minScore,
             noOfQuestion: noOfQuestion,
             questions: questions,
-            complete: false
+            complete: false,
+            time: 0
         };
     };
 
@@ -142,7 +152,7 @@ export default class QuestionContainer extends React.Component {
             let second = parseInt((((endTime - now) % 60000) / 1000).toFixed(0));
             $("#timer").html(`Thời gian còn lại: <strong>${(minute < 10) ? "0" + minute : minute} : ${(second < 10) ? "0" + second : second}</strong>`);
             this.setState({
-                time: `${29 - minute} phút, ${60 - second} giây`
+                time: this.state.time + 1
             });
             if (minute <= 0 && second <= 0) {
                 alert("Hết thời gian");
@@ -151,127 +161,150 @@ export default class QuestionContainer extends React.Component {
         }, 1000);
     };
 
+    startExam = () => {
+        this.countDown(new Date().getTime() + this.state.maxTime);
+        this.setState({
+            dialog: false
+        });
+    };
+
     render() {
         return (
-            <div className="main-container">
-                <div className="question-selector">
-                    {
-                        this.state.questions.map((question, index) => {
-                                let state = "";
-                                if (this.state.complete !== true) {
-                                    if (question.selected === true) {
-                                        state = " selected";
-                                    } else if (question.finish === true) {
-                                        state = " finish";
-                                    }
-                                } else {
-                                    if (question.correct === true) {
-                                        state = " correct";
+            <div className="exam-container">
+                <Dialog
+                    title="THI THỬ SÁT HẠCH"
+                    actions={[
+                        <FlatButton label="BẮT ĐẦU LÀM BÀI" onClick={this.startExam}/>
+                    ]}
+                    modal={true}
+                    open={this.state.dialog}
+                >
+                    Bạn đã lựa chọn thi thử sát hạch lý thuyết giấy phép lái xe hạng {this.state.grade}<br/>
+                    Tổng số câu hỏi: {this.state.noOfQuestion}<br/>
+                    Thời gian làm bài: {this.state.maxTime / 60000} phút<br/>
+                    Để vượt qa được bài thi, bạn phải trả lời đúng ít nhất {this.state.minScore}/{this.state.noOfQuestion} câu hỏi<br/>
+                    Chúc bạn may mắn !!<br/>
+                </Dialog>
+                <Paper zDepth={1} style={{padding: 10}}>
+                    <div className="question-selector">
+                        {
+                            this.state.questions.map((question, index) => {
+                                    let state = "";
+                                    if (this.state.complete !== true) {
+                                        if (question.selected === true) {
+                                            state = " selected";
+                                        } else if (question.finish === true) {
+                                            state = " finish";
+                                        }
                                     } else {
-                                        state = " incorrect";
+                                        if (question.correct === true) {
+                                            state = " correct";
+                                        } else {
+                                            state = " incorrect";
+                                        }
                                     }
-                                }
 
-                                return <a key={index + 1}
-                                          href="#"
-                                          className={`question-button${state}`}
-                                          onClick={this.handleSelectQuestion}>{index + 1}</a>
-                            }
-                        )
-                    }
-                </div>
-                <div className="question-button-container">
-                    <RaisedButton
-                        backgroundColor="#b20000"
-                        label="Thoát"
-                        style={{marginRight: 20}}
-                        labelStyle={{color: "#FFFFFF"}}
-                    />
-                    <RaisedButton
-                        icon={<Previous/>}
-                        primary={true}
-                        onClick={this.handlePreviousQuestion}
-                    />
-                    <span className="question-number">Câu {this.state.currentQuestion + 1}</span>
-                    <RaisedButton
-                        labelPosition="before"
-                        icon={<Next/>}
-                        primary={true}
-                        onClick={this.handleNextQuestion}
-                    />
-                    <RaisedButton
-                        label="Kết thúc"
-                        style={{marginLeft: 20}}
-                        backgroundColor="#fffb2d"
-                        onClick={this.handleComplete}
-                    />
-                </div>
-                <div id="timer">Thời gian còn lại</div>
-                <div className="question">
-                    Câu {this.state.currentQuestion + 1}: {this.state.questions[this.state.currentQuestion].question}</div>
-                <div className="question-answer">
-                    {
-                        (this.state.complete === true) ?
-                            <div>
-                                <div className="answer-status">
-                                    {
-                                        (this.state.questions[this.state.currentQuestion].correct) ?
-                                            <span style={{color: "#00ad22"}}>ĐÚNG!</span> :
-                                            <span style={{color: "#d10000"}}>SAI!</span>
-                                    }
-                                </div>
-                                <div>
-                                    {
-                                        <span>Đáp án:&nbsp;
-                                            {
-                                                this.state.questions[this.state.currentQuestion].correctAnswer.map(answer => {
-                                                    return answer + 1
-                                                }).toString()
-                                            }
-             </span>
-                                    }
-                                </div>
-                                <div>
-                                    {
-                                        <span>Câu trả lời của bạn:&nbsp;
-                                            {
-                                                this.state.questions[this.state.currentQuestion].answer.map(answer => {
-                                                    return answer + 1
-                                                }).toString()
-                                            }
-             </span>
-                                    }
-                                </div>
-                            </div>
-                            : ""
-                    }
-                </div>
-                <div className="question-picture">
-                    {
-                        (this.state.questions[this.state.currentQuestion].picture !== "") ?
-                            (<img
-                                src={`./common/picture/${this.state.questions[this.state.currentQuestion].picture}`}/>) : (
-                            <br/>)
-                    }
-                </div>
-                < div className="responses">
-                    {
-                        this.state.questions[this.state.currentQuestion].responses.map((response, index) => {
-                            return (
-                                <div key={index} className="response-container">
-                                    <Checkbox
-                                        label={`${index + 1} - ${response.text}`}
-                                        checked={this.state.questions[this.state.currentQuestion].responses[index].checked}
-                                        onCheck={this.handleCheckResponse}
-                                        id={`${this.state.currentQuestion}-${index}`}
-                                        disabled={this.state.complete}
-                                        labelStyle={(this.state.questions[this.state.currentQuestion].responses[index].checked) ? {color: "blue"} : {color: "#000000"} }
-                                    />
-                                </div>
+                                    return <a key={index + 1}
+                                              href="#"
+                                              className={`question-button${state}`}
+                                              onClick={this.handleSelectQuestion}>{index + 1}</a>
+                                }
                             )
-                        })
-                    }
-                </div>
+                        }
+                    </div>
+                    <div className="question-button-container">
+                        <RaisedButton
+                            backgroundColor="#b20000"
+                            label="Thoát"
+                            style={{marginRight: 20}}
+                            labelStyle={{color: "#FFFFFF"}}
+                        />
+                        <RaisedButton
+                            icon={<Previous/>}
+                            primary={true}
+                            onClick={this.handlePreviousQuestion}
+                        />
+                        <span className="question-number">Câu {this.state.currentQuestion + 1}</span>
+                        <RaisedButton
+                            labelPosition="before"
+                            icon={<Next/>}
+                            primary={true}
+                            onClick={this.handleNextQuestion}
+                        />
+                        <RaisedButton
+                            label="Kết thúc"
+                            style={{marginLeft: 20}}
+                            backgroundColor="#fffb2d"
+                            onClick={this.handleComplete}
+                        />
+                    </div>
+                    <div id="timer">Thời gian còn lại</div>
+                    <div className="question">
+                        Câu {this.state.currentQuestion + 1}: {this.state.questions[this.state.currentQuestion].question}</div>
+                    <div className="question-answer">
+                        {
+                            (this.state.complete === true) ?
+                                <div>
+                                    <div className="answer-status">
+                                        {
+                                            (this.state.questions[this.state.currentQuestion].correct) ?
+                                                <span style={{color: "#00ad22"}}>ĐÚNG!</span> :
+                                                <span style={{color: "#d10000"}}>SAI!</span>
+                                        }
+                                    </div>
+                                    <div>
+                                        {
+                                            <span>Đáp án:&nbsp;
+                                                {
+                                                    this.state.questions[this.state.currentQuestion].correctAnswer.map(answer => {
+                                                        return answer + 1
+                                                    }).toString()
+                                                }
+                                        </span>
+                                        }
+                                    </div>
+                                    <div>
+                                        {
+                                            <span>Câu trả lời của bạn:&nbsp;
+                                                {
+                                                    this.state.questions[this.state.currentQuestion].answer.map(answer => {
+                                                        return answer + 1
+                                                    }).toString()
+                                                }
+                                        </span>
+                                        }
+                                    </div>
+                                </div>
+                                : ""
+                        }
+                    </div>
+                    <div className="question-picture">
+                        {
+                            (this.state.questions[this.state.currentQuestion].picture !== "") ?
+                                (<img
+                                    src={`./common/picture/${this.state.questions[this.state.currentQuestion].picture}`}/>) : (
+                                <br/>)
+                        }
+                    </div>
+                    < div className="responses">
+                        {
+                            this.state.questions[this.state.currentQuestion].responses.map((response, index) => {
+                                return (
+                                    <div key={index} className="response-container">
+                                        <Checkbox
+                                            label={`${index + 1} - ${response.text}`}
+                                            checked={this.state.questions[this.state.currentQuestion].responses[index].checked}
+                                            onCheck={this.handleCheckResponse}
+                                            id={`${this.state.currentQuestion}-${index}`}
+                                            disabled={this.state.complete}
+                                            labelStyle={(this.state.questions[this.state.currentQuestion].responses[index].checked) ? {color: "blue"} : {color: "#000000"} }
+                                        />
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                </Paper>
             </div>
         )
     }

@@ -1,9 +1,8 @@
-.main-container {
+.exam-container {
     width: 40%;
-    border: 1px solid black;
     display: inline-block;
     text-align: left;
-    margin: 20px;
+    margin: 10px;
 }
 
 .question {
@@ -40,6 +39,7 @@ input[type=checkbox] {
     margin-bottom: 10px;
     width: 100%;
     text-align: center;
+    z-index: 0;
 }
 
 .question-number {
@@ -70,4 +70,51 @@ input[type=checkbox] {
 
 .response-container {
     margin-bottom: 8px;
+}
+
+.question-button {
+    background-color: #e8e8e8;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    padding-top: 9px;
+    margin: 2px;
+    width: 40px;
+    height: 30px;
+    text-decoration: none;
+}
+
+.selected {
+    background-color: black;
+    color: white;
+}
+
+.finish {
+    background-color: #96d6ff;
+}
+
+.correct {
+    background-color: #23a300;
+    color: white;
+
+}
+
+.incorrect {
+    background-color: #b20000;
+    color: white;
+}
+
+.question-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.question-button:active {
+    position: relative;
+    top: 1px;
 }

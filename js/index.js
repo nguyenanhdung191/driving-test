@@ -5,11 +5,10 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 
-import QuestionContainer from "./component/QuestionContainer";
-
+import MainComponent from "./component/MainComponent";
 ReactDOM.render(
     <MuiThemeProvider>
-        <QuestionContainer/>
+        <MainComponent/>
     </MuiThemeProvider>,
     document.getElementById("app")
 );

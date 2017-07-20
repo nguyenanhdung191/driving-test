@@ -1,0 +1,50 @@
+.instruction-container {
+    width: 40%;
+    display: inline-block;
+    text-align: left;
+    margin: 10px;
+}
+
+.rule-container {
+    font-size:18px;
+    text-align: justify;
+}
+
+.question-type-container {
+    margin-top: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.question-type {
+    width: 48.5%;
+    float: left;
+    margin: 5px;
+}
+
+.question-type-icon-text-container {
+    overflow: hidden;
+    padding: 5px;
+}
+
+.question-type-icon-text-container:hover {
+    background-color: #d8e6ff;
+    cursor: pointer;
+}
+
+.question-type-icon-container {
+    width: 28%;
+    float: left;
+    margin-right: 10px;
+}
+
+.question-type-icon {
+    width: 100%;
+}
+
+.question-type-text {
+    text-align: center;
+    font-size: 18px;
+    width: 68%;
+    float: left;
+}
