@@ -182,7 +182,8 @@ export default class ExamContainer extends React.Component {
                     Bạn đã lựa chọn thi thử sát hạch lý thuyết giấy phép lái xe hạng {this.state.grade}<br/>
                     Tổng số câu hỏi: {this.state.noOfQuestion}<br/>
                     Thời gian làm bài: {this.state.maxTime / 60000} phút<br/>
-                    Để vượt qa được bài thi, bạn phải trả lời đúng ít nhất {this.state.minScore}/{this.state.noOfQuestion} câu hỏi<br/>
+                    Để vượt qa được bài thi, bạn phải trả lời đúng ít
+                    nhất {this.state.minScore}/{this.state.noOfQuestion} câu hỏi<br/>
                     Chúc bạn may mắn !!<br/>
                 </Dialog>
                 <Paper zDepth={1} style={{padding: 10}}>
@@ -286,7 +287,7 @@ export default class ExamContainer extends React.Component {
                                 <br/>)
                         }
                     </div>
-                    < div className="responses">
+                    <div className="responses">
                         {
                             this.state.questions[this.state.currentQuestion].responses.map((response, index) => {
                                 return (

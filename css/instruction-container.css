@@ -6,7 +6,7 @@
 }
 
 .rule-container {
-    font-size:18px;
+    font-size: 18px;
     text-align: justify;
 }
 
@@ -20,6 +20,7 @@
     width: 48.5%;
     float: left;
     margin: 5px;
+    z-index: 9995;
 }
 
 .question-type-icon-text-container {
