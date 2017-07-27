@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="88e6da3b-0829-4754-94f6-384403399b5f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/exam-container.css" afterPath="$PROJECT_DIR$/css/exam-container.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/instruction-container.css" afterPath="$PROJECT_DIR$/css/instruction-container.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/component/ExamContainer.js" afterPath="$PROJECT_DIR$/js/component/ExamContainer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/component/InstructionComponent.js" afterPath="$PROJECT_DIR$/js/component/InstructionComponent.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,40 +18,42 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InstructionComponent.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InstructionComponent.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/component/InstructionComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="201" column="57" lean-forward="false" selection-start-line="201" selection-start-column="57" selection-end-line="201" selection-end-column="57" />
+            <state relative-caret-position="357">
+              <caret line="242" column="64" lean-forward="false" selection-start-line="242" selection-start-column="64" selection-end-line="242" selection-end-column="64" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#613#3738#0" expanded="false" />
-                <element signature="e#3782#4159#0" expanded="false" />
-                <element signature="e#4200#4494#0" expanded="false" />
-                <element signature="e#4528#4918#0" expanded="false" />
-                <element signature="e#4956#5346#0" expanded="false" />
-                <element signature="e#5374#6335#0" expanded="false" />
+                <element signature="e#731#3856#0" expanded="false" />
+                <element signature="e#3900#5464#0" expanded="false" />
+                <element signature="e#5505#5799#0" expanded="false" />
+                <element signature="e#5833#6223#0" expanded="false" />
+                <element signature="e#6261#6652#0" expanded="false" />
+                <element signature="e#6684#7012#0" expanded="false" />
+                <element signature="e#7040#7205#0" expanded="false" />
+                <element signature="e#7233#8194#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExamContainer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/component/ExamContainer.js">
+      <file leaf-file-name="instruction-container.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/instruction-container.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="61" column="6" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="61" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#1028#1703#0" expanded="false" />
-                <element signature="e#1741#2416#0" expanded="false" />
-                <element signature="e#2472#2673#0" expanded="false" />
-                <element signature="e#2714#3292#0" expanded="false" />
-                <element signature="e#3322#4812#0" expanded="false" />
-                <element signature="e#4850#5883#0" expanded="false" />
-                <element signature="e#5915#6554#0" expanded="false" />
-                <element signature="e#6579#6715#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="522">
+              <caret line="58" column="19" lean-forward="false" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="exam-container.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/exam-container.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,8 +119,9 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/common/rules.json" />
         <option value="$PROJECT_DIR$/js/component/ExamContainer.js" />
-        <option value="$PROJECT_DIR$/css/instruction-container.css" />
         <option value="$PROJECT_DIR$/js/component/InstructionComponent.js" />
+        <option value="$PROJECT_DIR$/css/instruction-container.css" />
+        <option value="$PROJECT_DIR$/css/exam-container.css" />
       </list>
     </option>
   </component>
@@ -180,6 +183,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -240,9 +245,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -725,12 +728,13 @@
       <workItem from="1500532725820" duration="12951000" />
       <workItem from="1500619451660" duration="3942000" />
       <workItem from="1500883127981" duration="3108000" />
-      <workItem from="1501050289285" duration="10855000" />
+      <workItem from="1501050289285" duration="12084000" />
+      <workItem from="1501125921813" duration="4298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140721000" />
+    <option name="totallyTimeSpent" value="146248000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -759,7 +763,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2427293" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20779915" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2099359" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -783,7 +787,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1026,36 +1030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="8" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-          <folding>
-            <element signature="n#!!block;n#A1#0;n#!!top" expanded="false" />
-            <element signature="e#163#1231#0" expanded="false" />
-            <element signature="n#!!block;n#A2#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#questionList#0;n#!!block;n#A2#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#B1#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#questionList#0;n#!!block;n#B1#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#law#0;n#!!block;n#questionList#0;n#!!block;n#B1#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#morality#0;n#!!block;n#questionList#0;n#!!block;n#B1#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#drivingSkill#0;n#!!block;n#questionList#0;n#!!block;n#B1#0;n#!!top" expanded="false" />
-            <element signature="e#11204#12039#0" expanded="false" />
-            <element signature="n#!!block;n#trafficSign#0;n#!!block;n#questionList#0;n#!!block;n#B1#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#driving#0;n#!!block;n#questionList#0;n#!!block;n#B1#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#B2#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#law#0;n#!!block;n#questionList#0;n#!!block;n#B2#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#transportation#0;n#!!block;n#questionList#0;n#!!block;n#B2#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#morality#0;n#!!block;n#questionList#0;n#!!block;n#B2#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#drivingSkill#0;n#!!block;n#questionList#0;n#!!block;n#B2#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#trafficSign#0;n#!!block;n#questionList#0;n#!!block;n#B2#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#C#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#D#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#E#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#F#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#law#0;n#!!block;n#questionList#0;n#!!block;n#F#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#transportation#0;n#!!block;n#questionList#0;n#!!block;n#F#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#morality#0;n#!!block;n#questionList#0;n#!!block;n#F#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#drivingSkill#0;n#!!block;n#questionList#0;n#!!block;n#F#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#trafficSign#0;n#!!block;n#questionList#0;n#!!block;n#F#0;n#!!top" expanded="false" />
-            <element signature="n#!!block;n#driving#0;n#!!block;n#questionList#0;n#!!block;n#F#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1077,26 +1051,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/exam-container.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="55" column="16" lean-forward="false" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/instruction-container.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="22" column="18" lean-forward="true" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/component/ExamContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="61" column="6" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="61" selection-end-column="6" />
+        <state relative-caret-position="1401">
+          <caret line="245" column="25" lean-forward="true" selection-start-line="245" selection-start-column="25" selection-end-line="245" selection-end-column="25" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#1028#1703#0" expanded="false" />
@@ -1113,17 +1071,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/component/InstructionComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="201" column="57" lean-forward="false" selection-start-line="201" selection-start-column="57" selection-end-line="201" selection-end-column="57" />
+        <state relative-caret-position="357">
+          <caret line="242" column="64" lean-forward="false" selection-start-line="242" selection-start-column="64" selection-end-line="242" selection-end-column="64" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#613#3738#0" expanded="false" />
-            <element signature="e#3782#4159#0" expanded="false" />
-            <element signature="e#4200#4494#0" expanded="false" />
-            <element signature="e#4528#4918#0" expanded="false" />
-            <element signature="e#4956#5346#0" expanded="false" />
-            <element signature="e#5374#6335#0" expanded="false" />
+            <element signature="e#731#3856#0" expanded="false" />
+            <element signature="e#3900#5464#0" expanded="false" />
+            <element signature="e#5505#5799#0" expanded="false" />
+            <element signature="e#5833#6223#0" expanded="false" />
+            <element signature="e#6261#6652#0" expanded="false" />
+            <element signature="e#6684#7012#0" expanded="false" />
+            <element signature="e#7040#7205#0" expanded="false" />
+            <element signature="e#7233#8194#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/instruction-container.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="58" column="19" lean-forward="false" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/exam-container.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

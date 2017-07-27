@@ -5,6 +5,7 @@ import ruleList from "../../common/rules.json";
 import RaisedButton from "material-ui/RaisedButton";
 import Next from 'material-ui/svg-icons/av/fast-forward';
 import Previous from 'material-ui/svg-icons/av/fast-rewind';
+import Checkbox from "material-ui/Checkbox"
 
 export default class InstructionComponent extends React.Component {
     constructor(props) {
@@ -12,7 +13,9 @@ export default class InstructionComponent extends React.Component {
         this.state = {
             type: "",
             questions: [],
-            currentQuestion: 0
+            currentQuestion: 0,
+            showAnswer: false,
+            showAnswerLabel: "XEM ĐÁP ÁN"
         };
     };
 
@@ -86,14 +89,47 @@ export default class InstructionComponent extends React.Component {
 
     handleSelecQuestionType = (event) => {
         let questions = [];
-        ruleList[this.props.grade].questionList[event.currentTarget.id].questions.forEach(no => {
-            questions.push(questionList["" + no]);
-        });
+        let typeLabel = "";
+        if (event.currentTarget.id !== "all") {
+            ruleList[this.props.grade].questionList[event.currentTarget.id].questions.forEach(no => {
+                questions.push(questionList["" + no]);
+            });
+        } else {
+            Object.keys(ruleList[this.props.grade].questionList).forEach(type => {
+                ruleList[this.props.grade].questionList[type].questions.forEach(no => {
+                    questions.push(questionList["" + no]);
+                });
+            });
+        }
+        switch (event.currentTarget.id) {
+            case "law":
+                typeLabel = "KHÁI NIỆM VÀ QUY TẮC";
+                break;
+            case "transportation":
+                typeLabel = "NGHIỆP VỤ VẬN TẢI";
+                break;
+            case"morality":
+                typeLabel = "ĐẠO ĐỨC NGHỀ NGHIỆP";
+                break;
+            case "drivingSkill":
+                typeLabel = "KỸ THUẬT LÁI XE & CẤU TẠO VÀ SỬA CHỮA";
+                break;
+            case "trafficSign":
+                typeLabel = "HỆ THỐNG BIỂN BÁO";
+                break;
+            case "driving":
+                typeLabel = "SA HÌNH";
+                break;
+            case "all":
+                typeLabel = "TẤT CẢ CÂU HỎI";
+                break;
+        }
         questions[0].selected = true;
         this.setState({
             questions: questions,
             type: event.currentTarget.id,
-            currentQuestion: 0
+            currentQuestion: 0,
+            typeLabel: typeLabel
         });
     };
 
@@ -124,8 +160,32 @@ export default class InstructionComponent extends React.Component {
             object.questions[currentQuestionNo].selected = false;
             object.questions[currentQuestionNo - 1].selected = true;
             object.currentQuestion -= 1;
+
         }
         this.setState(object);
+    };
+
+    handleShowAnswer = () => {
+        if (this.state.showAnswer === true) {
+            this.setState({
+                showAnswer: false,
+                showAnswerLabel: "XEM ĐÁP ÁN"
+            });
+        } else {
+            this.setState({
+                showAnswer: true,
+                showAnswerLabel: "ẨN ĐÁP ÁN"
+            });
+        }
+    };
+
+    handleGoBack = () => {
+        this.setState({
+            type: "",
+            questions: [],
+            showAnswer: false,
+            showAnswerLabel: "XEM ĐÁP ÁN"
+        });
     };
 
     showQuestion = () => {
@@ -179,6 +239,9 @@ export default class InstructionComponent extends React.Component {
                     :
                     <div id="typeQuestionContainer">
                         <Paper zDepth={1} style={{padding: 10}}>
+                            <div className="type-label-container">
+                                ÔN THI BẰNG LÁI HẠNG {this.props.grade} - DANH MỤC: {this.state.typeLabel}
+                            </div>
                             <div className="question-selector">
                                 {this.showQuestion()}
                             </div>
@@ -197,10 +260,51 @@ export default class InstructionComponent extends React.Component {
                                 /><br/>
                                 <RaisedButton
                                     backgroundColor="#b20000"
-                                    label="Thoát"
+                                    label="QUAY LẠI"
                                     labelStyle={{color: "#FFFFFF"}}
-                                    style={{marginTop: 10}}
+                                    style={{marginTop: 10, width: 150}}
+                                    onClick={this.handleGoBack}
                                 />
+                                <RaisedButton
+                                    backgroundColor="#00bf1c"
+                                    label={this.state.showAnswerLabel}
+                                    labelStyle={{color: "#FFFFFF"}}
+                                    style={{marginLeft: 10, width: 150}}
+                                    onClick={this.handleShowAnswer}
+                                />
+                            </div>
+                            <div className="question">
+                                Câu {this.state.currentQuestion + 1}: {this.state.questions[this.state.currentQuestion].question}</div>
+                            <div className="question-picture">
+                                {
+                                    (this.state.questions[this.state.currentQuestion].picture !== "") ?
+                                        (<img
+                                            src={`./common/picture/${this.state.questions[this.state.currentQuestion].picture}`}/>) : (
+                                        <br/>)
+                                }
+                            </div>
+                            <div className="responses">
+                                {
+                                    this.state.questions[this.state.currentQuestion].responses.map((response, index) => {
+                                        let correctAnswer = false;
+                                        if (this.state.showAnswer) {
+                                            if (this.state.questions[this.state.currentQuestion].correctAnswer.includes(index)) {
+                                                correctAnswer = true;
+                                            }
+                                        }
+                                        return (
+                                            <div key={index} className="response-container">
+                                                <Checkbox
+                                                    label={`${index + 1} - ${response.text}`}
+                                                    checked={correctAnswer}
+                                                    id={`${this.state.currentQuestion}-${index}`}
+                                                    disabled={false}
+                                                    labelStyle={(correctAnswer) ? {color: "blue"} : {color: "#000000"} }
+                                                />
+                                            </div>
+                                        )
+                                    })
+                                }
                             </div>
                         </Paper>
                     </div>}

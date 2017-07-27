@@ -49,3 +49,12 @@
     width: 68%;
     float: left;
 }
+
+.type-label-container {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #000991;
+}
