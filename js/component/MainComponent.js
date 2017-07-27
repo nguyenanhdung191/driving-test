@@ -27,81 +27,43 @@ export default class MainComponent extends React.Component {
     render() {
         return (
             <div>
-                <nav className="cbp-hsmenu-wrapper" id="cbp-hsmenu-wrapper">
-                    <div className="cbp-hsinner">
-                        <ul className="cbp-hsmenu">
-                            <li>
-                                <a href="#"><strong>TRANG CHỦ</strong></a>
-                            </li>
-                            <li>
-                                <a href="#"><strong>ÔN THI BẰNG LÁI</strong></a>
-                                <ul className="cbp-hssubmenu">
-                                    <li>
-                                        <a href="?mode=practice&grade=A1"><span>Hạng A1</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=practice&grade=A2"><span>Hạng A2</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=practice&grade=B1"><span>Hạng B1</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=practice&grade=B2"><span>Hạng B2</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=practice&grade=C"><span>Hạng C</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=practice&grade=D"><span>Hạng D</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=practice&grade=E"><span>Hạng E</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=practice&grade=F"><span>Hạng F</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><strong>THI THỬ SÁT HẠCH</strong></a>
-                                <ul className="cbp-hssubmenu cbp-hssub-rows">
-                                    <li>
-                                        <a href="?mode=exam&grade=A1"><span>Hạng A1</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=exam&grade=A2"><span>Hạng A2</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=exam&grade=B1"><span>Hạng B1</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=exam&grade=B2"><span>Hạng B2</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=exam&grade=C"><span>Hạng C</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=exam&grade=D"><span>Hạng D</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=exam&grade=E"><span>Hạng E</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="?mode=exam&grade=F"><span>Hạng F</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">About</a>
-                            </li>
-                        </ul>
-                    </div>
+                <nav id='cssmenu'>
+                    <div id="head-mobile">MENU</div>
+                    <div className="button"></div>
+                    <ul>
+                        <li><a href='#'>TRANG CHỦ</a></li>
+                        <li><a href='#'>ÔN THI BẰNG LÁI</a>
+                            <ul>
+                                <li><a href='?mode=practice&grade=A1'>Hạng A1</a></li>
+                                <li><a href='?mode=practice&grade=A2'>Hạng A2</a></li>
+                                <li><a href='?mode=practice&grade=B1'>Hạng B1</a></li>
+                                <li><a href='?mode=practice&grade=B2'>Hạng B2</a></li>
+                                <li><a href='?mode=practice&grade=C'>Hạng C</a></li>
+                                <li><a href='?mode=practice&grade=D'>Hạng D</a></li>
+                                <li><a href='?mode=practice&grade=E'>Hạng E</a></li>
+                                <li><a href='?mode=practice&grade=F'>Hạng F</a></li>
+                            </ul>
+                        </li>
+                        <li><a href='#'>THI THỬ BẰNG LÁI</a>
+                            <ul>
+                                <li><a href='?mode=exam&grade=A1'>Hạng A1</a></li>
+                                <li><a href='?mode=exam&grade=A2'>Hạng A2</a></li>
+                                <li><a href='?mode=exam&grade=B1'>Hạng B1</a></li>
+                                <li><a href='?mode=exam&grade=B2'>Hạng B2</a></li>
+                                <li><a href='?mode=exam&grade=C'>Hạng C</a></li>
+                                <li><a href='?mode=exam&grade=D'>Hạng D</a></li>
+                                <li><a href='?mode=exam&grade=E'>Hạng E</a></li>
+                                <li><a href='?mode=exam&grade=F'>Hạng F</a></li>
+                            </ul>
+                        </li>
+                        <li><a href='#'>ABOUT</a></li>
+                    </ul>
                 </nav>
                 {
                     (this.state.mode !== null) ?
                         (this.state.mode === "practice") ?
-                        <InstructionComponent grade={this.state.grade}/> :
-                        <ExamContainer grade={this.state.grade}/>
+                            <InstructionComponent grade={this.state.grade}/> :
+                            <ExamContainer grade={this.state.grade}/>
                         : ""
                 }
             </div>
