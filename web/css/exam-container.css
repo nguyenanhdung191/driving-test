@@ -1,8 +1,6 @@
 .exam-container {
-    width: 40%;
-    display: inline-block;
+    width: 100%;
     text-align: left;
-    margin: 10px;
 }
 
 .question {
@@ -22,11 +20,20 @@
 }
 
 .question-picture img {
-    width: 60%;
+    height: 60%;
 }
 
 .responses {
     font-size: 18px;
+}
+
+@media screen and (max-width: 1000px) {
+    .question {
+        font-size: 30px;
+    }
+    .responses {
+        font-size: 22px;
+    }
 }
 
 input[type=checkbox] {
@@ -118,3 +125,13 @@ input[type=checkbox] {
     position: relative;
     top: 1px;
 }
+
+.exam-label-container {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #000991;
+}
+

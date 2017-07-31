@@ -2,10 +2,10 @@ let webpack = require("webpack");
 
 module.exports = {
     context: __dirname,
-    entry: "./js/index.js",
+    entry: "./web/js/index.js",
     output: {
         path: __dirname,
-        filename: "bundle.js"
+        filename: "./web/bundle.js"
     },
     module: {
         loaders: [

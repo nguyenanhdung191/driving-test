@@ -1,3 +1,3 @@
 /node_modules/
-bundle.js
-common/picture/
+web/bundle.js
+web/common/picture/

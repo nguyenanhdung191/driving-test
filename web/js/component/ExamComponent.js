@@ -10,7 +10,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
 
-export default class ExamContainer extends React.Component {
+export default class ExamComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = this.questionsGenerate(this.props.grade);
@@ -116,6 +116,10 @@ export default class ExamContainer extends React.Component {
         this.setState(object);
     };
 
+    handleExit = () => {
+        window.location.replace("index.html");
+    };
+
     questionsGenerate = (grade) => {
         let rule = ruleList[grade];
         let maxTime = rule.maxTime;
@@ -168,6 +172,7 @@ export default class ExamContainer extends React.Component {
         });
     };
 
+
     render() {
         return (
             <div className="exam-container">
@@ -187,6 +192,9 @@ export default class ExamContainer extends React.Component {
                     Chúc bạn may mắn !!<br/>
                 </Dialog>
                 <Paper zDepth={1} style={{padding: 10}}>
+                    <div className="exam-label-container">
+                        THI THỬ SÁT HẠCH BẰNG LÁI HẠNG {this.props.grade}
+                    </div>
                     <div className="question-selector">
                         {
                             this.state.questions.map((question, index) => {
@@ -219,6 +227,7 @@ export default class ExamContainer extends React.Component {
                             label="Thoát"
                             style={{marginRight: 20}}
                             labelStyle={{color: "#FFFFFF"}}
+                            onClick={this.handleExit}
                         />
                         <RaisedButton
                             icon={<Previous/>}

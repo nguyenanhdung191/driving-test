@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i&subset=latin-ext,vietnamese');
+
+#app {
+    width: 100%;
+    text-align: center;
+}
+
+* {
+    font-family: 'Cabin', sans-serif;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    background-color: #f1f1f1;
+}
+
+.content-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.ad-left {
+    margin-top: 10px;
+    float: left;
+    width: 20%;
+}
+
+.ad-right {
+    margin-top: 10px;
+    float: left;
+    width: 20%;
+}
+
+.ad-right img,
+.ad-left img {
+    width: 70%;
+    height: auto;
+}
+
+.content {
+    margin-top: 10px;
+    float: left;
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    .content {
+        width: 100%
+    }
+
+    .ad-right,
+    .ad-left {
+        display: none;
+    }
+
+    .ad-top,
+    .ad-bottom {
+        display: block !important;
+    }
+}
+
+.ad-top {
+    display: none;
+    margin-top:5px;
+}
+
+.ad-bottom {
+    display: none;
+}
+
+.ad-top img,
+.ad-bottom img {
+    height: 200px;
+    width: auto;
+}
+

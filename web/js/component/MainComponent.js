@@ -1,5 +1,7 @@
 import React from "react";
-import ExamContainer from "./ExamContainer";
+import HomePageComponent from "./HomePageComponent";
+import AboutComponent from "./AboutComponent";
+import ExamComponent from "./ExamComponent";
 import InstructionComponent from "./InstructionComponent";
 
 export default class MainComponent extends React.Component {
@@ -24,6 +26,16 @@ export default class MainComponent extends React.Component {
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
+    showContent = () => {
+        switch(this.state.mode){
+            case null: return <HomePageComponent/>;
+            case "practice": return <InstructionComponent grade={this.state.grade}/>;
+            case "exam": return <ExamComponent grade={this.state.grade}/>;
+            case "about": return <AboutComponent/>;
+            default: return <div>ERROR</div>;
+        }
+    };
+
     render() {
         return (
             <div>
@@ -31,7 +43,7 @@ export default class MainComponent extends React.Component {
                     <div id="head-mobile">MENU</div>
                     <div className="button"></div>
                     <ul>
-                        <li><a href='#'>TRANG CHỦ</a></li>
+                        <li><a href="index.html">TRANG CHỦ</a></li>
                         <li><a href='#'>ÔN THI BẰNG LÁI</a>
                             <ul>
                                 <li><a href='?mode=practice&grade=A1'>Hạng A1</a></li>
@@ -56,16 +68,26 @@ export default class MainComponent extends React.Component {
                                 <li><a href='?mode=exam&grade=F'>Hạng F</a></li>
                             </ul>
                         </li>
-                        <li><a href='#'>ABOUT</a></li>
+                        <li><a href='?mode=about'>GIỚI THIỆU</a></li>
                     </ul>
                 </nav>
-                {
-                    (this.state.mode !== null) ?
-                        (this.state.mode === "practice") ?
-                            <InstructionComponent grade={this.state.grade}/> :
-                            <ExamContainer grade={this.state.grade}/>
-                        : ""
-                }
+                <div className="content-container">
+                    <div className="ad-left">
+                        <img src="./img/ad-left.gif"/>
+                    </div>
+                    <div className="ad-top">
+                        <img src="./img/ad-top.jpg"/>
+                    </div>
+                    <div className="content">
+                        {this.showContent()}
+                    </div>
+                    <div className="ad-bottom">
+                        <img src="./img/ad-top.jpg"/>
+                    </div>
+                    <div className="ad-right">
+                        <img src="./img/ad-left.gif"/>
+                    </div>
+                </div>
             </div>
         )
     }
