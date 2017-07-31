@@ -1,14 +1,18 @@
 import React from "react";
 import questionList from "../../common/questions.json";
 import ruleList from "../../common/rules.json";
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from 'material-ui/Button';
+import {FormControlLabel} from 'material-ui/Form';
 import Checkbox from 'material-ui/Checkbox';
-import Next from 'material-ui/svg-icons/av/fast-forward';
-import Previous from 'material-ui/svg-icons/av/fast-rewind';
+import Next from 'material-ui-icons/FastForward';
+import Previous from 'material-ui-icons/FastRewind';
 import Paper from 'material-ui/Paper';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
-
+import Dialog, {
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+} from 'material-ui/Dialog';
 
 export default class ExamComponent extends React.Component {
     constructor(props) {
@@ -63,7 +67,7 @@ export default class ExamComponent extends React.Component {
 
     handleCheckResponse = (event, isInputChecked) => {
         let object = this.state;
-        object.questions[this.state.currentQuestion].responses[parseInt(event.target.id.split("-")[1])].checked = isInputChecked;
+        object.questions[this.state.currentQuestion].responses[parseInt(event.target.value)].checked = isInputChecked;
         this.setState(object);
     };
 
@@ -176,25 +180,25 @@ export default class ExamComponent extends React.Component {
     render() {
         return (
             <div className="exam-container">
-                <Dialog
-                    title="THI THỬ SÁT HẠCH"
-                    actions={[
-                        <FlatButton label="BẮT ĐẦU LÀM BÀI" onClick={this.startExam}/>
-                    ]}
-                    modal={true}
-                    open={this.state.dialog}
-                >
-                    Bạn đã lựa chọn thi thử sát hạch lý thuyết giấy phép lái xe hạng {this.state.grade}<br/>
-                    Tổng số câu hỏi: {this.state.noOfQuestion}<br/>
-                    Thời gian làm bài: {this.state.maxTime / 60000} phút<br/>
-                    Để vượt qa được bài thi, bạn phải trả lời đúng ít
-                    nhất {this.state.minScore}/{this.state.noOfQuestion} câu hỏi<br/>
-                    Chúc bạn may mắn !!<br/>
+                <Dialog ignoreBackdropClick={true} ignoreEscapeKeyUp={true} open={this.state.dialog}>
+                    <DialogTitle>
+                        THI THỬ SÁT HẠCH
+                    </DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                            Bạn đã lựa chọn thi thử sát hạch lý thuyết giấy phép lái xe hạng {this.state.grade}<br/>
+                            Tổng số câu hỏi: {this.state.noOfQuestion}<br/>
+                            Thời gian làm bài: {this.state.maxTime / 60000} phút<br/>
+                            Để vượt qa được bài thi, bạn phải trả lời đúng ít
+                            nhất {this.state.minScore}/{this.state.noOfQuestion} câu hỏi<br/>
+                            Chúc bạn may mắn !!<br/>
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={this.startExam}>BẮT ĐẦU LÀM BÀI</Button>
+                    </DialogActions>
                 </Dialog>
-                <Paper zDepth={1} style={{padding: 10}}>
-                    <div className="exam-label-container">
-                        THI THỬ SÁT HẠCH BẰNG LÁI HẠNG {this.props.grade}
-                    </div>
+                <Paper elevation={3} square={false} style={{padding: 10}}>
                     <div className="question-selector">
                         {
                             this.state.questions.map((question, index) => {
@@ -222,31 +226,35 @@ export default class ExamComponent extends React.Component {
                         }
                     </div>
                     <div className="question-button-container">
-                        <RaisedButton
-                            backgroundColor="#b20000"
-                            label="Thoát"
-                            style={{marginRight: 20}}
-                            labelStyle={{color: "#FFFFFF"}}
-                            onClick={this.handleExit}
-                        />
-                        <RaisedButton
-                            icon={<Previous/>}
-                            primary={true}
-                            onClick={this.handlePreviousQuestion}
-                        />
+                        <Button raised
+                                style={{height: 30, width: 120, margin: 5, fontWeight: "bold"}}
+                                onClick={this.handleExit}
+                                color="accent"
+                        >Thoát</Button>
+                        <Button raised
+                                style={{height: 30, width: 120, margin: 5, fontWeight: "bold"}}
+                                icon={<Previous/>}
+                                onClick={this.handlePreviousQuestion}
+                                color="primary"
+                        >Câu trước</Button>
                         <span className="question-number">Câu {this.state.currentQuestion + 1}</span>
-                        <RaisedButton
-                            labelPosition="before"
-                            icon={<Next/>}
-                            primary={true}
-                            onClick={this.handleNextQuestion}
-                        />
-                        <RaisedButton
-                            label="Kết thúc"
-                            style={{marginLeft: 20}}
-                            backgroundColor="#fffb2d"
-                            onClick={this.handleComplete}
-                        />
+                        <Button raised
+                                style={{height: 30, width: 120, margin: 5, fontWeight: "bold"}}
+                                icon={<Next/>}
+                                onClick={this.handleNextQuestion}
+                                color="primary"
+                        >Câu kế</Button>
+                        <Button raised
+                                style={{
+                                    height: 30,
+                                    width: 120,
+                                    margin: 5,
+                                    fontWeight: "bold",
+                                    backgroundColor: "#ff723f",
+                                    color: "#FFFFFF"
+                                }}
+                                onClick={this.handleComplete}
+                        >KẾT THÚC</Button>
                     </div>
                     <div id="timer">Thời gian còn lại</div>
                     <div className="question">
@@ -301,13 +309,16 @@ export default class ExamComponent extends React.Component {
                             this.state.questions[this.state.currentQuestion].responses.map((response, index) => {
                                 return (
                                     <div key={index} className="response-container">
-                                        <Checkbox
-                                            label={`${index + 1} - ${response.text}`}
-                                            checked={this.state.questions[this.state.currentQuestion].responses[index].checked}
-                                            onCheck={this.handleCheckResponse}
-                                            id={`${this.state.currentQuestion}-${index}`}
-                                            disabled={this.state.complete}
-                                            labelStyle={(this.state.questions[this.state.currentQuestion].responses[index].checked) ? {color: "blue"} : {color: "#000000"} }
+                                        <FormControlLabel
+                                            control={<Checkbox
+                                                value={index + ""}
+                                                checked={response.checked}
+                                                onChange={this.handleCheckResponse}
+                                                id={`${this.state.currentQuestion}-${index}`}
+                                                disabled={this.state.complete}
+                                            />}
+                                            style={{color: (response.checked) ? "blue" : "black"}}
+                                            label={(index + 1) + ". " + response.text}
                                         />
                                     </div>
                                 )

@@ -2,9 +2,8 @@ import React from "react";
 import Paper from 'material-ui/Paper';
 import questionList from "../../common/questions.json";
 import ruleList from "../../common/rules.json";
-import RaisedButton from "material-ui/RaisedButton";
-import Next from 'material-ui/svg-icons/av/fast-forward';
-import Previous from 'material-ui/svg-icons/av/fast-rewind';
+import Button from "material-ui/Button";
+import {FormControlLabel} from 'material-ui/Form';
 import Checkbox from "material-ui/Checkbox"
 
 export default class InstructionComponent extends React.Component {
@@ -17,6 +16,14 @@ export default class InstructionComponent extends React.Component {
             showAnswer: false,
             showAnswerLabel: "XEM ĐÁP ÁN"
         };
+        let current = this;
+        $(document).on('keydown', function (event) {
+            if (event.keyCode === 37) {
+                current.handlePreviousQuestion();
+            } else if (event.keyCode === 39) {
+                current.handleNextQuestion();
+            }
+        });
     };
 
     questionTypeGenerate = () => {
@@ -54,7 +61,7 @@ export default class InstructionComponent extends React.Component {
             typeText = `Bao gồm ${ruleList[grade].questionList[type].questions.length} câu hỏi`;
             return (
                 <div className="question-type" key={type}>
-                    <Paper className="paper" zDepth={1} rounded={true} style={{overFlow: "hidden"}}>
+                    <Paper className="paper" elevation={3} square={false} style={{overFlow: "hidden"}}>
                         <div className="question-type-icon-text-container" id={type}
                              onClick={this.handleSelecQuestionType}>
                             <div className="question-type-icon-container">
@@ -71,7 +78,7 @@ export default class InstructionComponent extends React.Component {
         });
         questionTypeList.push(
             <div className="question-type" key="list">
-                <Paper className="paper" zDepth={1} rounded={true} style={{overFlow: "hidden"}}>
+                <Paper className="paper" elevation={3} square={false} style={{overFlow: "hidden"}}>
                     <div className="question-type-icon-text-container" id="all" onClick={this.handleSelecQuestionType}>
                         <div className="question-type-icon-container">
                             <img className="question-type-icon" src="./common/icon/list-icon.png"></img>
@@ -223,7 +230,7 @@ export default class InstructionComponent extends React.Component {
             <div className="instruction-container">
                 {(this.state.type === "") ?
                     <div id="typeListContainer">
-                        <Paper zDepth={1} style={{padding: 10}}>
+                        <Paper elevation={3} square={false} style={{padding: 10}}>
                             <div className="rule-container">
                                 <div><strong>Bạn đã lựa chọn ôn thi bằng lái hạng {this.props.grade}</strong></div>
                                 <div>Bộ câu hỏi ôn thi lý thuyết hạng {this.props.grade} bao
@@ -238,7 +245,7 @@ export default class InstructionComponent extends React.Component {
                     </div>
                     :
                     <div id="typeQuestionContainer">
-                        <Paper zDepth={1} style={{padding: 10}}>
+                        <Paper elevation={3} square={false} style={{padding: 10}}>
                             <div className="type-label-container">
                                 ÔN THI BẰNG LÁI HẠNG {this.props.grade} - DANH MỤC: {this.state.typeLabel}
                             </div>
@@ -246,32 +253,33 @@ export default class InstructionComponent extends React.Component {
                                 {this.showQuestion()}
                             </div>
                             <div className="question-button-container">
-                                <RaisedButton
-                                    icon={<Previous/>}
-                                    primary={true}
-                                    onClick={this.handlePreviousQuestion}
-                                />
+                                <Button raised
+                                        style={{height: 30, width: 130, margin: 5, fontWeight: "bold"}}
+                                        onClick={this.handleGoBack}
+                                        color="accent"
+                                >QUAY LẠI</Button>
+                                <Button raised
+                                        style={{height: 30, width: 130, margin: 5, fontWeight: "bold"}}
+                                        onClick={this.handlePreviousQuestion}
+                                        color="primary"
+                                >CÂU TRƯỚC</Button>
                                 <span className="question-number">Câu {this.state.currentQuestion + 1}</span>
-                                <RaisedButton
-                                    labelPosition="before"
-                                    icon={<Next/>}
-                                    primary={true}
-                                    onClick={this.handleNextQuestion}
-                                /><br/>
-                                <RaisedButton
-                                    backgroundColor="#b20000"
-                                    label="QUAY LẠI"
-                                    labelStyle={{color: "#FFFFFF"}}
-                                    style={{marginTop: 10, width: 150}}
-                                    onClick={this.handleGoBack}
-                                />
-                                <RaisedButton
-                                    backgroundColor="#00bf1c"
-                                    label={this.state.showAnswerLabel}
-                                    labelStyle={{color: "#FFFFFF"}}
-                                    style={{marginLeft: 10, width: 150}}
-                                    onClick={this.handleShowAnswer}
-                                />
+                                <Button raised
+                                        style={{height: 30, width: 130, margin: 5, fontWeight: "bold"}}
+                                        onClick={this.handleNextQuestion}
+                                        color="primary"
+                                >CÂU KẾ</Button>
+                                <Button raised
+                                        style={{
+                                            height: 30,
+                                            width: 130,
+                                            margin: 5,
+                                            fontWeight: "bold",
+                                            backgroundColor: "#15910e",
+                                            color: "#FFFFFF"
+                                        }}
+                                        onClick={this.handleShowAnswer}
+                                >{this.state.showAnswerLabel}</Button>
                             </div>
                             <div className="question">
                                 Câu {this.state.currentQuestion + 1}: {this.state.questions[this.state.currentQuestion].question}</div>
@@ -294,12 +302,12 @@ export default class InstructionComponent extends React.Component {
                                         }
                                         return (
                                             <div key={index} className="response-container">
-                                                <Checkbox
-                                                    label={`${index + 1} - ${response.text}`}
-                                                    checked={correctAnswer}
-                                                    id={`${this.state.currentQuestion}-${index}`}
-                                                    disabled={false}
-                                                    labelStyle={(correctAnswer) ? {color: "blue"} : {color: "#000000"} }
+                                                <FormControlLabel
+                                                    control={<Checkbox
+                                                        checked={correctAnswer}
+                                                    />}
+                                                    style={{color: (correctAnswer) ? "blue" : "black"}}
+                                                    label={(index + 1) + ". " + response.text}
                                                 />
                                             </div>
                                         )

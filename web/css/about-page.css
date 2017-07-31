@@ -2,3 +2,19 @@
     width: 100%;
     text-align: justify;
 }
+
+.comment-container {
+    width: 50%;
+    float: left;
+}
+
+.contact-container {
+    width: 50%;
+    float: left;
+}
+
+.comment-contact-container {
+    margin-top: 25px;
+    width: 100%;
+    overflow: hidden;
+}

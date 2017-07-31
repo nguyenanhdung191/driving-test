@@ -10,7 +10,7 @@ export default class HomePageComponent extends React.Component {
     render() {
         return (
             <div className="home-page-container">
-                <Paper zDepth={1} style={{padding: 10}}>
+                <Paper elevation={3} square={false} style={{padding: 10}}>
                     <div>CHÀO MỪNG BẠN ĐÃ ĐẾN VỚI THITHUBANGLAI.COM</div>
                     <div>jlshfajklshfajshfashfhasjfhasdfhaslklskdjhflkjsahfkljshfdkajsdhfjakshdflashdfjkashdfkh
                         asdjhfklajshdfkjashdfkjasdfhasdfasjdkfhkashdfjkasldf
