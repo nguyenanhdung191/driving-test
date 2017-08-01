@@ -54,8 +54,6 @@ export default class HomePageComponent extends React.Component {
                         asd;ljfhasjkldfhakjshdfjksadfhjsakdhfjashdfjkhsadfhjkalshdf
                         askljdhflakjshdfsahdfjkashdfjkashfksjhfkjslhfajkshdfjashdflasdasdf
                     </div>
-
-
                 </Paper>
             </div>
         )

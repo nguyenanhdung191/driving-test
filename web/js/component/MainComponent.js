@@ -1,5 +1,4 @@
 import React from "react";
-import HomePageComponent from "./HomePageComponent";
 import AboutComponent from "./AboutComponent";
 import ExamComponent from "./ExamComponent";
 import InstructionComponent from "./InstructionComponent";
@@ -28,7 +27,7 @@ export default class MainComponent extends React.Component {
 
     showContent = () => {
         switch(this.state.mode){
-            case null: return <HomePageComponent/>;
+            case null: return <AboutComponent/>;
             case "practice": return <InstructionComponent grade={this.state.grade}/>;
             case "exam": return <ExamComponent grade={this.state.grade}/>;
             case "about": return <AboutComponent/>;
@@ -43,7 +42,6 @@ export default class MainComponent extends React.Component {
                     <div id="head-mobile">MENU</div>
                     <div className="button"></div>
                     <ul>
-                        <li><a href="index.html">TRANG CHỦ</a></li>
                         <li><a href='#'>ÔN THI BẰNG LÁI</a>
                             <ul>
                                 <li><a href='?mode=practice&grade=A1'>Hạng A1</a></li>
