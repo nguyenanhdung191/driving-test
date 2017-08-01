@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack && tar -rvf driving-test.tar server web package.json server.js webpack.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,9 +17,12 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "jsonfile": "^3.0.1",
     "material-ui": "^1.0.0-beta.3",
     "material-ui-icons": "^1.0.0-alpha.19",
+    "moment": "^2.18.1",
     "npm-check-updates": "^2.12.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",

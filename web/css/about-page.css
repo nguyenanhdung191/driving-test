@@ -11,10 +11,27 @@
 .contact-container {
     width: 50%;
     float: left;
+    text-align: center;
+    overflow: hidden;
 }
 
 .comment-contact-container {
     margin-top: 25px;
     width: 100%;
     overflow: hidden;
+}
+
+.web-logo-container {
+    width: 28%;
+    float:left;
+}
+
+.web-title-container {
+    margin-left:10px;
+    float:left;
+    text-align: left;
+}
+
+.web-logo-container img {
+    width: 100%;
 }

@@ -73,19 +73,15 @@ export default class MainComponent extends React.Component {
                 </nav>
                 <div className="content-container">
                     <div className="ad-left">
-                        <img src="./img/ad-left.gif"/>
                     </div>
                     <div className="ad-top">
-                        <img src="./img/ad-top.jpg"/>
                     </div>
                     <div className="content">
                         {this.showContent()}
                     </div>
                     <div className="ad-bottom">
-                        <img src="./img/ad-top.jpg"/>
                     </div>
                     <div className="ad-right">
-                        <img src="./img/ad-left.gif"/>
                     </div>
                 </div>
             </div>

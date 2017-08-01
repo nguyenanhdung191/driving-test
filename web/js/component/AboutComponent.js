@@ -2,6 +2,7 @@ import React from "react";
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
+import moment from "moment";
 
 export default class AboutComponent extends React.Component {
     constructor() {
@@ -12,21 +13,39 @@ export default class AboutComponent extends React.Component {
         }
     };
 
-    handleNameChange = (event, newValue) => {
-        if (newValue.length > 35) {
+    handleNameChange = (event) => {
+        if (event.target.value.length > 35) {
             return;
         }
         this.setState({
-            name: newValue
+            name: event.target.value
         });
     };
 
-    handleCommentChange = (event, newValue) => {
-        if (newValue.length > 350) {
+    handleCommentChange = (event) => {
+        if (event.target.value.length > 350) {
             return;
         }
         this.setState({
-            comment: newValue
+            comment: event.target.value
+        });
+    };
+
+    handlePostComment = () => {
+        let comment = {};
+        comment.date = moment().format("YYYY-MM-DD HH:mm:ss");
+        comment.name = this.state.name;
+        comment.comment = this.state.comment;
+        $.ajax({
+            type: 'POST',
+            url: '../api/comment',
+            data: JSON.stringify(comment),
+            contentType: "application/json",
+            dataType: 'json'
+        });
+        this.setState({
+            name: "",
+            comment: ""
         });
     };
 
@@ -34,8 +53,7 @@ export default class AboutComponent extends React.Component {
         return (
             <div className="about-page-container">
                 <Paper elevation={3} square={false} style={{padding: 10}}>
-                    <div>THITHUBANGLAI.COM</div>
-                    <div>- thithubanglai.com đóng vai trò là một công cụ hỗ trợ giúp các bạn vượt qua được kì thi sát
+                    <div>- Thithubanglai.com đóng vai trò là một công cụ hỗ trợ giúp các bạn vượt qua được kì thi sát
                         hạch
                         lý thuyết lái xe tất cả các hạng.
                     </div>
@@ -62,7 +80,7 @@ export default class AboutComponent extends React.Component {
                         thể ôn thi hiệu quả hơn.
                     </div>
                     <div>
-                        Bạn không hài lòng về vấn đề gì đó? Đừng ngần ngại đóng góp ý kiến với chúng tôi để giúp ứng
+                        - Bạn không hài lòng về vấn đề gì đó? Đừng ngần ngại đóng góp ý kiến với chúng tôi để giúp ứng
                         dụng ngày càng
                         hoàn thiện hơn.
                     </div>
@@ -70,23 +88,30 @@ export default class AboutComponent extends React.Component {
                         <div className="comment-container">
                             <strong>Đóng góp ý kiến</strong><br/>
                             <TextField
+                                label="Tên của bạn"
                                 value={this.state.name}
-                                hintText="Tên của bạn (có thể bỏ trống)"
                                 onChange={this.handleNameChange}
-                            /><br/>
+                                style={{width: "50%"}}
+                            />
+                            <br/><br/>
                             <TextField
                                 onChange={this.handleCommentChange}
                                 value={this.state.comment}
-                                hintText="Ý kiến của bạn (không được bỏ trống)"
-                                multiLine={true}
-                                rows={1}
-                                rowsMax={5}
+                                label="Ý kiến của bạn"
+                                multiline
+                                rowsMax="4"
                                 style={{width: "100%"}}
-                            /><br/>
-                            <Button raised color="primary">GỬI</Button>
+                            /><br/><br/>
+                            <Button raised color="primary" style={{fontWeight: "bold"}}
+                                    onClick={this.handlePostComment}>GỬI</Button>
                         </div>
                         <div className="contact-container">
-                            asdfasdfsadf
+                            <div className="web-logo-container"><img src="./common/icon/driver-license-icon.png"/></div>
+                            <div className="web-title-container">
+                                <div><strong>THITHUBANGLAI.COM</strong></div>
+                                <div><strong>Phát triển bởi:</strong> Nguyễn Anh Dũng - &#9400; Copyright 2017</div>
+                                <div><strong>Email:</strong> nguyenanhdung191@gmail.com</div>
+                            </div>
                         </div>
                     </div>
                 </Paper>
