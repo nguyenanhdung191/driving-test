@@ -123,7 +123,7 @@ export default class ExamComponent extends React.Component {
     };
 
     questionsGenerate = (grade) => {
-        let rule = ruleList[grade];
+        let rule = JSON.parse(JSON.stringify(ruleList[grade]));
         let maxTime = rule.maxTime;
         let totalQuestion = rule.totalQuestion;
         let minScore = rule.minScore;
@@ -133,7 +133,7 @@ export default class ExamComponent extends React.Component {
             for (let i = 1; i <= rule.questionList[key].no; i++) {
                 let length = rule.questionList[key].questions.length;
                 let randomIndex = Math.floor(Math.random() * length);
-                questions.push(questionList[rule.questionList[key].questions[randomIndex]]);
+                questions.push(JSON.parse(JSON.stringify(questionList[rule.questionList[key].questions[randomIndex]])));
                 rule.questionList[key].questions.splice(randomIndex, 1);
             }
         });
@@ -175,9 +175,10 @@ export default class ExamComponent extends React.Component {
     };
 
     componentWillReceiveProps(nextProps) {
-        this.state = this.questionsGenerate(nextProps.grade);
-        this.state.questions[0].selected = true;
-    }
+        let object = this.questionsGenerate(nextProps.grade);
+        object.questions[0].selected = true;
+        this.setState(object);
+    };
 
     render() {
         return (

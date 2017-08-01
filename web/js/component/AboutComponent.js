@@ -36,17 +36,22 @@ export default class AboutComponent extends React.Component {
         comment.date = moment().format("YYYY-MM-DD HH:mm:ss");
         comment.name = this.state.name;
         comment.comment = this.state.comment;
-        $.ajax({
-            type: 'POST',
-            url: '../api/comment',
-            data: JSON.stringify(comment),
-            contentType: "application/json",
-            dataType: 'json'
-        });
-        this.setState({
-            name: "",
-            comment: ""
-        });
+        if (comment.length >= 20) {
+            $.ajax({
+                type: 'POST',
+                url: '../api/comment',
+                data: JSON.stringify(comment),
+                contentType: "application/json",
+                dataType: 'json'
+            });
+            alert("Cám ơn bạn đã đóng góp ý kiến");
+            this.setState({
+                name: "",
+                comment: ""
+            });
+        } else {
+            alert("Ý kiến phải có ít nhất 20 ký tự");
+        }
     };
 
     render() {
