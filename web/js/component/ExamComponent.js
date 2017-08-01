@@ -4,8 +4,6 @@ import ruleList from "../../common/rules.json";
 import Button from 'material-ui/Button';
 import {FormControlLabel} from 'material-ui/Form';
 import Checkbox from 'material-ui/Checkbox';
-import Next from 'material-ui-icons/FastForward';
-import Previous from 'material-ui-icons/FastRewind';
 import Paper from 'material-ui/Paper';
 import Dialog, {
     DialogActions,
@@ -176,11 +174,15 @@ export default class ExamComponent extends React.Component {
         });
     };
 
+    componentWillReceiveProps(nextProps) {
+        this.state = this.questionsGenerate(nextProps.grade);
+        this.state.questions[0].selected = true;
+    }
 
     render() {
         return (
             <div className="exam-container">
-                <Dialog ignoreBackdropClick={true} ignoreEscapeKeyUp={true} open={this.state.dialog}>
+                <Dialog open={this.state.dialog}>
                     <DialogTitle>
                         THI THỬ SÁT HẠCH
                     </DialogTitle>
@@ -233,14 +235,12 @@ export default class ExamComponent extends React.Component {
                         >Thoát</Button>
                         <Button raised
                                 style={{height: 30, width: 120, margin: 5, fontWeight: "bold"}}
-                                icon={<Previous/>}
                                 onClick={this.handlePreviousQuestion}
                                 color="primary"
                         >Câu trước</Button>
                         <span className="question-number">Câu {this.state.currentQuestion + 1}</span>
                         <Button raised
                                 style={{height: 30, width: 120, margin: 5, fontWeight: "bold"}}
-                                icon={<Next/>}
                                 onClick={this.handleNextQuestion}
                                 color="primary"
                         >Câu kế</Button>

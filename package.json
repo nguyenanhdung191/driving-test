@@ -27,6 +27,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-tap-event-plugin": "^2.0.1",
+    "serve-favicon": "^2.4.3",
     "webpack": "^2.6.1"
   }
 }

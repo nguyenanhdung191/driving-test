@@ -7,32 +7,38 @@ export default class MainComponent extends React.Component {
     constructor() {
         super();
         this.state = {
-            mode: this.getParameterByName("mode"),
-            grade: this.getParameterByName("grade")
+            inputMode: "",
+            inputGrade: ""
         };
     };
 
-    getParameterByName(name) {
-        let url = window.location.href;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"), results = regex.exec(url);
-        if (!results) {
-            return null;
-        }
-        if (!results[2]) {
-            return '';
-        }
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-
     showContent = () => {
-        switch(this.state.mode){
-            case null: return <AboutComponent/>;
-            case "practice": return <InstructionComponent grade={this.state.grade}/>;
-            case "exam": return <ExamComponent grade={this.state.grade}/>;
-            case "about": return <AboutComponent/>;
-            default: return <div>ERROR</div>;
+        switch (this.state.inputMode) {
+            case "":
+                return <AboutComponent/>;
+                break;
+            case "practice":
+                return <InstructionComponent grade={this.state.inputGrade}/>;
+                break;
+            case "exam":
+                return <ExamComponent grade={this.state.inputGrade}/>;
+                break;
+            case "about":
+                return <AboutComponent/>;
+                break;
+            default:
+                return <div>ERROR</div>;
         }
+    };
+
+    handleChangeMode = (event) => {
+        window.clearInterval(window.intervalId);
+        let inputMode = event.currentTarget.id.split(";")[0];
+        let inputGrade = event.currentTarget.id.split(";")[1];
+        this.setState({
+            inputMode: inputMode,
+            inputGrade: inputGrade
+        });
     };
 
     render() {
@@ -44,29 +50,29 @@ export default class MainComponent extends React.Component {
                     <ul>
                         <li><a href='#'>ÔN THI BẰNG LÁI</a>
                             <ul>
-                                <li><a href='?mode=practice&grade=A1'>Hạng A1</a></li>
-                                <li><a href='?mode=practice&grade=A2'>Hạng A2</a></li>
-                                <li><a href='?mode=practice&grade=B1'>Hạng B1</a></li>
-                                <li><a href='?mode=practice&grade=B2'>Hạng B2</a></li>
-                                <li><a href='?mode=practice&grade=C'>Hạng C</a></li>
-                                <li><a href='?mode=practice&grade=D'>Hạng D</a></li>
-                                <li><a href='?mode=practice&grade=E'>Hạng E</a></li>
-                                <li><a href='?mode=practice&grade=F'>Hạng F</a></li>
+                                <li><a id="practice;A1" onClick={this.handleChangeMode}>Hạng A1</a></li>
+                                <li><a id="practice;A2" onClick={this.handleChangeMode}>Hạng A2</a></li>
+                                <li><a id="practice;B1" onClick={this.handleChangeMode}>Hạng B1</a></li>
+                                <li><a id="practice;B2" onClick={this.handleChangeMode}>Hạng B2</a></li>
+                                <li><a id="practice;C" onClick={this.handleChangeMode}>Hạng C</a></li>
+                                <li><a id="practice;D" onClick={this.handleChangeMode}>Hạng D</a></li>
+                                <li><a id="practice;E" onClick={this.handleChangeMode}>Hạng E</a></li>
+                                <li><a id="practice;F" onClick={this.handleChangeMode}>Hạng F</a></li>
                             </ul>
                         </li>
-                        <li><a href='#'>THI THỬ BẰNG LÁI</a>
+                        <li><a>THI THỬ BẰNG LÁI</a>
                             <ul>
-                                <li><a href='?mode=exam&grade=A1'>Hạng A1</a></li>
-                                <li><a href='?mode=exam&grade=A2'>Hạng A2</a></li>
-                                <li><a href='?mode=exam&grade=B1'>Hạng B1</a></li>
-                                <li><a href='?mode=exam&grade=B2'>Hạng B2</a></li>
-                                <li><a href='?mode=exam&grade=C'>Hạng C</a></li>
-                                <li><a href='?mode=exam&grade=D'>Hạng D</a></li>
-                                <li><a href='?mode=exam&grade=E'>Hạng E</a></li>
-                                <li><a href='?mode=exam&grade=F'>Hạng F</a></li>
+                                <li><a id="exam;A1" onClick={this.handleChangeMode}>Hạng A1</a></li>
+                                <li><a id="exam;A2" onClick={this.handleChangeMode}>Hạng A2</a></li>
+                                <li><a id="exam;B1" onClick={this.handleChangeMode}>Hạng B1</a></li>
+                                <li><a id="exam;B2" onClick={this.handleChangeMode}>Hạng B2</a></li>
+                                <li><a id="exam;C" onClick={this.handleChangeMode}>Hạng C</a></li>
+                                <li><a id="exam;D" onClick={this.handleChangeMode}>Hạng D</a></li>
+                                <li><a id="exam;E" onClick={this.handleChangeMode}>Hạng E</a></li>
+                                <li><a id="exam;F" onClick={this.handleChangeMode}>Hạng F</a></li>
                             </ul>
                         </li>
-                        <li><a href='?mode=about'>GIỚI THIỆU</a></li>
+                        <li><a id="about;jasgdjsad" onClick={this.handleChangeMode}>GIỚI THIỆU</a></li>
                     </ul>
                 </nav>
                 <div className="content-container">

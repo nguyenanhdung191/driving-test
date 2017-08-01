@@ -20,6 +20,7 @@ nav {
 #cssmenu ul li,
 #cssmenu ul li a,
 #cssmenu #head-mobile {
+    cursor: pointer;
     margin: 0;
     padding: 0;
     border: 0;
