@@ -116,6 +116,12 @@ export default class AboutComponent extends React.Component {
                                 <div><strong>THITHUBANGLAI.COM</strong></div>
                                 <div><strong>Phát triển bởi:</strong> Nguyễn Anh Dũng - &#9400; Copyright 2017</div>
                                 <div><strong>Email:</strong> nguyenanhdung191@gmail.com</div>
+                                <div>Chia sẻ chúng tôi trên <img src="common/icon/facebook-logo.png"/></div>
+                                <div className="fb-share-button" data-href="http://thithubanglai.com/"
+                                     data-layout="button_count" data-size="large" data-mobile-iframe="true"><a
+                                    className="fb-xfbml-parse-ignore" target="_blank"
+                                    href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fthithubanglai.com%2F&amp;src=sdkpreparse">Chia
+                                    sẻ</a></div>
                             </div>
                         </div>
                     </div>

@@ -8,8 +8,14 @@ export default class MainComponent extends React.Component {
         super();
         this.state = {
             inputMode: "",
-            inputGrade: ""
+            inputGrade: "",
+            ads: [],
+            randomAd1: 0,
+            randomAd2: 0,
+            randomAd3: 0,
+            randomAd4: 0
         };
+        this.getOffer();
     };
 
     showContent = () => {
@@ -39,6 +45,34 @@ export default class MainComponent extends React.Component {
             inputMode: inputMode,
             inputGrade: inputGrade
         });
+    };
+
+    getOffer = () => {
+        let ads = [];
+        $.get("/api/offer", json => {
+            Object.keys(json).forEach(ad => {
+                ads.push(json[ad]);
+            });
+            this.setState({
+                ads: ads,
+                randomAd1: Math.floor(Math.random() * ads.length - 1),
+                randomAd2: Math.floor(Math.random() * ads.length - 1),
+                randomAd3: Math.floor(Math.random() * ads.length - 1),
+                randomAd4: Math.floor(Math.random() * ads.length - 1)
+            });
+            this.showAd();
+        });
+    };
+
+    showAd = () => {
+        setInterval(() => {
+            this.setState({
+                randomAd1: Math.floor(Math.random() * this.state.ads.length - 1),
+                randomAd2: Math.floor(Math.random() * this.state.ads.length - 1),
+                randomAd3: Math.floor(Math.random() * this.state.ads.length - 1),
+                randomAd4: Math.floor(Math.random() * this.state.ads.length - 1)
+            });
+        }, 20000);
     };
 
     render() {
@@ -77,6 +111,18 @@ export default class MainComponent extends React.Component {
                 </nav>
                 <div className="content-container">
                     <div className="ad-left">
+                        {
+                            (this.state.ads.length !== 0) ?
+                                <div>
+                                    <a target="_blank" href={this.state.ads[this.state.randomAd1].trackingLink}>
+                                        <img src={this.state.ads[this.state.randomAd1].image}/>
+                                    </a>
+                                    <a target="_blank" href={this.state.ads[this.state.randomAd2].trackingLink}>
+                                        <img src={this.state.ads[this.state.randomAd2].image}/>
+                                    </a>
+                                </div>
+                                : ""
+                        }
                     </div>
                     <div className="ad-top">
                     </div>
@@ -86,6 +132,18 @@ export default class MainComponent extends React.Component {
                     <div className="ad-bottom">
                     </div>
                     <div className="ad-right">
+                        {
+                            (this.state.ads.length !== 0) ?
+                                <div>
+                                    <a target="_blank" href={this.state.ads[this.state.randomAd3].trackingLink}>
+                                        <img src={this.state.ads[this.state.randomAd3].image}/>
+                                    </a>
+                                    <a target="_blank" href={this.state.ads[this.state.randomAd4].trackingLink}>
+                                        <img src={this.state.ads[this.state.randomAd4].image}/>
+                                    </a>
+                                </div>
+                                : ""
+                        }
                     </div>
                 </div>
             </div>
