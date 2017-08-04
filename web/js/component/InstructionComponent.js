@@ -1,10 +1,12 @@
 import React from "react";
 import Paper from 'material-ui/Paper';
+import Button from "material-ui/Button";
 import questionList from "../../common/questions.json";
 import ruleList from "../../common/rules.json";
-import Button from "material-ui/Button";
 import {FormControlLabel} from 'material-ui/Form';
-import Checkbox from "material-ui/Checkbox"
+import Checkbox from "material-ui/Checkbox";
+import Menu, {MenuItem} from 'material-ui/Menu';
+
 
 export default class InstructionComponent extends React.Component {
     constructor(props) {
@@ -13,17 +15,11 @@ export default class InstructionComponent extends React.Component {
             type: "",
             questions: [],
             currentQuestion: 0,
+            questionMenuOpen: false,
+            questionMenuAnchorElement: undefined,
             showAnswer: false,
             showAnswerLabel: "XEM ĐÁP ÁN"
         };
-        let current = this;
-        $(document).on('keydown', function (event) {
-            if (event.keyCode === 37) {
-                current.handlePreviousQuestion();
-            } else if (event.keyCode === 39) {
-                current.handleNextQuestion();
-            }
-        });
     };
 
     questionTypeGenerate = () => {
@@ -63,7 +59,7 @@ export default class InstructionComponent extends React.Component {
                 <div className="question-type" key={type}>
                     <Paper className="paper" elevation={3} square={false} style={{overFlow: "hidden"}}>
                         <div className="question-type-icon-text-container" id={type}
-                             onClick={this.handleSelecQuestionType}>
+                             onClick={this.handleSelectQuestionType}>
                             <div className="question-type-icon-container">
                                 <img className="question-type-icon" src={`./common/icon/${typeIconFile}`}></img>
                             </div>
@@ -79,7 +75,7 @@ export default class InstructionComponent extends React.Component {
         questionTypeList.push(
             <div className="question-type" key="list">
                 <Paper className="paper" elevation={3} square={false} style={{overFlow: "hidden"}}>
-                    <div className="question-type-icon-text-container" id="all" onClick={this.handleSelecQuestionType}>
+                    <div className="question-type-icon-text-container" id="all" onClick={this.handleSelectQuestionType}>
                         <div className="question-type-icon-container">
                             <img className="question-type-icon" src="./common/icon/list-icon.png"></img>
                         </div>
@@ -94,17 +90,17 @@ export default class InstructionComponent extends React.Component {
         return questionTypeList;
     };
 
-    handleSelecQuestionType = (event) => {
+    handleSelectQuestionType = (event) => {
         let questions = [];
         let typeLabel = "";
         if (event.currentTarget.id !== "all") {
             ruleList[this.props.grade].questionList[event.currentTarget.id].questions.forEach(no => {
-                questions.push(questionList["" + no]);
+                questions.push(JSON.parse(JSON.stringify(questionList["" + no])));
             });
         } else {
             Object.keys(ruleList[this.props.grade].questionList).forEach(type => {
                 ruleList[this.props.grade].questionList[type].questions.forEach(no => {
-                    questions.push(questionList["" + no]);
+                    questions.push(JSON.parse(JSON.stringify(questionList["" + no])));
                 });
             });
         }
@@ -167,7 +163,6 @@ export default class InstructionComponent extends React.Component {
             object.questions[currentQuestionNo].selected = false;
             object.questions[currentQuestionNo - 1].selected = true;
             object.currentQuestion -= 1;
-
         }
         this.setState(object);
     };
@@ -192,6 +187,45 @@ export default class InstructionComponent extends React.Component {
             questions: [],
             showAnswer: false,
             showAnswerLabel: "XEM ĐÁP ÁN"
+        });
+    };
+
+    handleFirstQuestion = () => {
+        let object = this.state;
+        object.questions[this.state.currentQuestion].selected = false;
+        object.questions[0].selected = true;
+        object.currentQuestion = 0;
+        this.setState(object);
+    };
+
+    handleLastQuestion = () => {
+        let object = this.state;
+        object.questions[this.state.currentQuestion].selected = false;
+        object.questions[this.state.questions.length - 1].selected = true;
+        object.currentQuestion = this.state.questions.length - 1;
+        this.setState(object);
+    };
+
+    handleOpenQuestionMenu = (event) => {
+        this.setState({
+            questionMenuOpen: true,
+            questionMenuAnchorElement: event.currentTarget
+        });
+    };
+
+    handleJumpQuestion = (event) => {
+        let questionIndex = parseInt(event.currentTarget.value);
+        let object = this.state;
+        object.questionMenuOpen = false;
+        object.questions[this.state.currentQuestion].selected = false;
+        object.questions[questionIndex].selected = true;
+        object.currentQuestion = questionIndex;
+        this.setState(object);
+    };
+
+    handleCloseMenu = () => {
+        this.setState({
+            questionMenuOpen: false
         });
     };
 
@@ -224,8 +258,20 @@ export default class InstructionComponent extends React.Component {
         return questionList;
     };
 
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            type: "",
+            questions: [],
+            currentQuestion: 0,
+            questionMenuOpen: false,
+            questionMenuAnchorElement: undefined,
+            showAnswer: false,
+            showAnswerLabel: "XEM ĐÁP ÁN"
+        });
+    };
 
     render() {
+
         return (
             <div className="instruction-container">
                 {(this.state.type === "") ?
@@ -239,6 +285,7 @@ export default class InstructionComponent extends React.Component {
                                 </div>
                             </div>
                             <div className="question-type-container">
+
                                 {this.questionTypeGenerate()}
                             </div>
                         </Paper>
@@ -247,7 +294,8 @@ export default class InstructionComponent extends React.Component {
                     <div id="typeQuestionContainer">
                         <Paper elevation={3} square={false} style={{padding: 10}}>
                             <div className="type-label-container">
-                                ÔN THI BẰNG LÁI HẠNG {this.props.grade} - DANH MỤC: {this.state.typeLabel}
+                                ÔN THI BẰNG LÁI HẠNG {this.props.grade} - DANH MỤC: {this.state.typeLabel} - TỔNG
+                                CỘNG {this.state.questions.length} CÂU HỎI
                             </div>
                             <div className="question-selector">
                                 {this.showQuestion()}
@@ -255,20 +303,56 @@ export default class InstructionComponent extends React.Component {
                             <div className="question-button-container">
                                 <Button raised
                                         style={{height: 30, width: 130, margin: 5, fontWeight: "bold"}}
-                                        onClick={this.handleGoBack}
-                                        color="accent"
-                                >QUAY LẠI</Button>
+                                        color="primary"
+                                        onClick={this.handleFirstQuestion}
+                                >CÂU ĐẦU</Button>
                                 <Button raised
-                                        style={{height: 30, width: 130, margin: 5, fontWeight: "bold"}}
+                                        style={{height: 30, margin: 5, fontWeight: "bold"}}
                                         onClick={this.handlePreviousQuestion}
                                         color="primary"
-                                >CÂU TRƯỚC</Button>
+                                >&lt;&lt;</Button>
                                 <span className="question-number">Câu {this.state.currentQuestion + 1}</span>
                                 <Button raised
-                                        style={{height: 30, width: 130, margin: 5, fontWeight: "bold"}}
+                                        style={{height: 30, margin: 5, fontWeight: "bold"}}
                                         onClick={this.handleNextQuestion}
                                         color="primary"
-                                >CÂU KẾ</Button>
+                                >&gt;&gt;</Button>
+                                <Button raised
+                                        style={{height: 30, width: 130, margin: 5, fontWeight: "bold"}}
+                                        color="primary"
+                                        onClick={this.handleLastQuestion}
+                                >CÂU CUỐI</Button><br/>
+                                <Button raised
+                                        style={{
+                                            color: "#FFFFFF",
+                                            height: 30,
+                                            width: 130,
+                                            margin: 5,
+                                            fontWeight: "bold",
+                                            backgroundColor: "#b22525",
+                                        }}
+                                        onClick={this.handleGoBack}
+                                >QUAY LẠI
+                                </Button>
+                                <Button onClick={this.handleOpenQuestionMenu}><strong>đi đến câu hỏi bất
+                                    kì</strong></Button>
+                                <Menu
+                                    anchorEl={this.state.questionMenuAnchorElement}
+                                    open={this.state.questionMenuOpen}
+                                    onRequestClose={this.handleCloseMenu}
+                                >
+                                    {
+                                        this.state.questions.map((question, index) =>
+                                            <MenuItem
+                                                key={index}
+                                                value={index}
+                                                onClick={this.handleJumpQuestion}
+                                            >
+                                                {"Câu " + (index + 1)}
+                                            </MenuItem>
+                                        )
+                                    }
+                                </Menu>
                                 <Button raised
                                         style={{
                                             height: 30,

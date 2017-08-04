@@ -17,14 +17,6 @@ export default class ExamComponent extends React.Component {
         super(props);
         this.state = this.questionsGenerate(this.props.grade);
         this.state.questions[0].selected = true;
-        let current = this;
-        $(document).on('keydown', function (event) {
-            if (event.keyCode === 37) {
-                current.handlePreviousQuestion();
-            } else if (event.keyCode === 39) {
-                current.handleNextQuestion();
-            }
-        });
     };
 
     handleNextQuestion = () => {
@@ -175,8 +167,12 @@ export default class ExamComponent extends React.Component {
     };
 
     componentWillReceiveProps(nextProps) {
+        if (nextProps.grade === this.state.grade) {
+            return;
+        }
         let object = this.questionsGenerate(nextProps.grade);
         object.questions[0].selected = true;
+        object.currentQuestion = 0;
         this.setState(object);
     };
 
@@ -230,9 +226,15 @@ export default class ExamComponent extends React.Component {
                     </div>
                     <div className="question-button-container">
                         <Button raised
-                                style={{height: 30, width: 120, margin: 5, fontWeight: "bold"}}
+                                style={{
+                                    backgroundColor: "#b22525",
+                                    height: 30,
+                                    width: 120,
+                                    margin: 5,
+                                    fontWeight: "bold",
+                                    color: "#FFFFFF"
+                                }}
                                 onClick={this.handleExit}
-                                color="accent"
                         >Thoát</Button>
                         <Button raised
                                 style={{height: 30, width: 120, margin: 5, fontWeight: "bold"}}

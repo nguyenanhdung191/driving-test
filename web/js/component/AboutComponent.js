@@ -85,7 +85,8 @@ export default class AboutComponent extends React.Component {
                         thể ôn thi hiệu quả hơn.
                     </div>
                     <div>
-                        - Bạn không hài lòng về vấn đề gì đó? Đừng ngần ngại đóng góp ý kiến với chúng tôi để giúp ứng
+                        - Bạn không hài lòng về vấn đề gì đó? Bạn phát hiện ra lỗi? Đừng ngần ngại đóng góp ý kiến với
+                        chúng tôi để giúp ứng
                         dụng ngày càng
                         hoàn thiện hơn.
                     </div>
@@ -118,10 +119,7 @@ export default class AboutComponent extends React.Component {
                                 <div><strong>Email:</strong> nguyenanhdung191@gmail.com</div>
                                 <div>Chia sẻ chúng tôi trên <img src="common/icon/facebook-logo.png"/></div>
                                 <div className="fb-share-button" data-href="http://thithubanglai.com/"
-                                     data-layout="button_count" data-size="large" data-mobile-iframe="true"><a
-                                    className="fb-xfbml-parse-ignore" target="_blank"
-                                    href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fthithubanglai.com%2F&amp;src=sdkpreparse">Chia
-                                    sẻ</a></div>
+                                     data-layout="button_count" data-mobile_iframe="true" data-size="large"></div>
                             </div>
                         </div>
                     </div>

@@ -15,7 +15,7 @@ export default class MainComponent extends React.Component {
             randomAd3: 0,
             randomAd4: 0
         };
-        this.getOffer();
+        //this.getOffer();
     };
 
     showContent = () => {
@@ -41,6 +41,10 @@ export default class MainComponent extends React.Component {
         window.clearInterval(window.intervalId);
         let inputMode = event.currentTarget.id.split(";")[0];
         let inputGrade = event.currentTarget.id.split(";")[1];
+        if (inputMode === "about") {
+            window.location = "index.html";
+            return;
+        }
         this.setState({
             inputMode: inputMode,
             inputGrade: inputGrade
